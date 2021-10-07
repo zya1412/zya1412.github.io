@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>实变函数第一章</title>
+      <link href="/2021/10/07/RealAnalysis1/"/>
+      <url>/2021/10/07/RealAnalysis1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="集合与点集"><a href="#集合与点集" class="headerlink" title="集合与点集"></a>集合与点集</h1><p>定义：设${A_k}$是一个集合列，若$A_1 \subset A_2 \subset … \subset A_k \subset …$​则称此集合列为递减集合列。称$\bigcap_{k = j}^{\infty}A_k$为{$A_k}的极限集。记为</p><p>$\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集为并集）。</p><p>定义：设${A_k}$​是一个集合列，令$B_j = \bigcup_{k = j}^{\infty}A_k$​显然有$B_j \subset B_{j + 1}$​，我们称$\lim_{k\rightarrow \infty}B_k = \bigcup_{j = 1}^{\infty}B_j$​为集合列{$A_k$​}的上极限集，简称上限集。记为$$\varlimsup_{k\rightarrow \infty} A_k = \bigcap_{j = 1}^{\infty}\bigcup_{k = j}^{\infty}A_k$$​。​​类似的，称集合$\bigcup_{j = 1}^{\infty}\bigcap_{k = j}^{\infty}A_k$​为集合列{$A_k$​​}的下极限集，记为$$\varliminf_{k \rightarrow \infty} = \bigcup_{j = 1}^{\infty}\bigcap_{k = j}^{\infty}A_k$$​，简称下限集。</p><p>若上下限集相等，则说{$A_k$}的极限集存在，记为$\lim_{k \rightarrow \infty} A_k$</p><p>定理：设${A_k}$是一个集合列，则有</p><ol><li><p>$$\varlimsup_{k\rightarrow \infty} A_k = {x:对\forall j \in \mathbb{N},\exists k \geq j , x \in A_k}$$</p></li><li><p>$$\varliminf_{k \rightarrow \infty} = {x:对\exists j \in \mathbb{N},当k \geq j_0时 , x \in A_k}$$</p></li></ol><p>定义：设X，Y是两个集合，称一切有序“元素对”(x,y)(其中$x \in X,y \in Y$​)形成的集合为X与Y的直积集，记为X * Y,即$X * Y = {(x,y):x \in X,y \in Y}$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+          <category> 实变函数 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2021/10/02/test/"/>
       <url>/2021/10/02/test/</url>
