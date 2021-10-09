@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://yoursite.com/2021/10/09/toddler'sbottle/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/10/09/pwn1/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,23 +20,23 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1633782907265" as="style">
+  <link rel="preload" href="/css/style.css?time=1633787327202" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>Toddler 's Bottle Write Up题解 - Zya's Blog</title>
   <meta name="keywords" content="pwn,null">
-  <meta name="description" content="Toddler ‘s Bottle Write Up题解fd1234567891011121314151617181920212223&#x2F;&#x2F; fd.#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;char buf[32];int main(int argc, char* argv[], char* e">
+  <meta name="description" content="fd1234567891011121314151617181920212223&#x2F;&#x2F; fd.#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;char buf[32];int main(int argc, char* argv[], char* envp[])&amp;#123;	if(argc&lt;2)&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Toddler &#39;s Bottle Write Up题解">
-<meta property="og:url" content="http://yoursite.com/2021/10/09/Toddler'sBottle/index.html">
+<meta property="og:url" content="http://yoursite.com/2021/10/09/pwn1/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
-<meta property="og:description" content="Toddler ‘s Bottle Write Up题解fd1234567891011121314151617181920212223&#x2F;&#x2F; fd.#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;char buf[32];int main(int argc, char* argv[], char* e">
+<meta property="og:description" content="fd1234567891011121314151617181920212223&#x2F;&#x2F; fd.#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;char buf[32];int main(int argc, char* argv[], char* envp[])&amp;#123;	if(argc&lt;2)&amp;#">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2021-10-09T12:32:03.914Z">
-<meta property="article:modified_time" content="2021-10-09T12:32:03.930Z">
+<meta property="article:published_time" content="2021-10-09T13:45:48.600Z">
+<meta property="article:modified_time" content="2021-10-09T13:48:13.381Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1633782907265" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1633782907265"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1633787327202" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1633787327202"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2426,7 +2426,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/09/Toddler'sBottle/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/09/pwn1/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Zya's Blog">
   </span>
@@ -2478,7 +2478,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-10-09T05:32:03-07:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-10-09T06:45:48-07:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2021年10月9日</p>
@@ -2502,7 +2502,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="Toddler-‘s-Bottle-Write-Up题解"><a href="#Toddler-‘s-Bottle-Write-Up题解" class="headerlink" title="Toddler ‘s Bottle Write Up题解"></a>Toddler ‘s Bottle Write Up题解</h1><h2 id="fd"><a href="#fd" class="headerlink" title="fd"></a>fd</h2><div class="story post-story"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fd.#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">32</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[], <span class="keyword">char</span>* envp[])</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc&lt;<span class="number">2</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;pass argv[1] a number\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> fd = atoi( argv[<span class="number">1</span>] ) - <span class="number">0x1234</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">	len = read(fd, buf, <span class="number">32</span>);</span><br><span class="line">	<span class="keyword">if</span>(!<span class="built_in">strcmp</span>(<span class="string">&quot;LETMEWIN\n&quot;</span>, buf))&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;good job :)\n&quot;</span>);</span><br><span class="line">		system(<span class="string">&quot;/bin/cat flag&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;learn about Linux file IO\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <h2 id="fd"><a href="#fd" class="headerlink" title="fd"></a>fd</h2><div class="story post-story"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fd.#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">32</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[], <span class="keyword">char</span>* envp[])</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc&lt;<span class="number">2</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;pass argv[1] a number\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> fd = atoi( argv[<span class="number">1</span>] ) - <span class="number">0x1234</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">	len = read(fd, buf, <span class="number">32</span>);</span><br><span class="line">	<span class="keyword">if</span>(!<span class="built_in">strcmp</span>(<span class="string">&quot;LETMEWIN\n&quot;</span>, buf))&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;good job :)\n&quot;</span>);</span><br><span class="line">		system(<span class="string">&quot;/bin/cat flag&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;learn about Linux file IO\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>给fd文件传入一个参数，该参数减0x1234应该是read的读入文件描述符0，故输入参数应该为0x1234=4660，然后进入read函数，输入LETMEWIN即可。</p>
 <p>![avatar](/home/zya1412/demo/source/_posts/Toddler’s Bottle/4.png)</p>
@@ -2530,8 +2530,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>![avatar](/home/zya1412/demo/source/_posts/Toddler’s Bottle/9.png)</p>
 </div><h2 id="mistake"><a href="#mistake" class="headerlink" title="mistake"></a>mistake</h2><div class="story post-story"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PW_LEN 10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> XORKEY 1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">xor</span><span class="params">(<span class="keyword">char</span>* s, <span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">		s[i] ^= XORKEY;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> fd;</span><br><span class="line">	<span class="keyword">if</span>(fd=open(<span class="string">&quot;/home/mistake/password&quot;</span>,O_RDONLY,<span class="number">0400</span>) &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;can&#x27;t open password %d\n&quot;</span>, fd);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;do not bruteforce...\n&quot;</span>);</span><br><span class="line">	sleep(time(<span class="number">0</span>)%<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> pw_buf[PW_LEN+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line">	<span class="keyword">if</span>(!(len=read(fd,pw_buf,PW_LEN) &gt; <span class="number">0</span>))&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;read error\n&quot;</span>);</span><br><span class="line">		close(fd);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> pw_buf2[PW_LEN+<span class="number">1</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;input password : &quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%10s&quot;</span>, pw_buf2);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// xor your input</span></span><br><span class="line">	<span class="keyword">xor</span>(pw_buf2, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(!<span class="built_in">strncmp</span>(pw_buf, pw_buf2, PW_LEN))&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Password OK\n&quot;</span>);</span><br><span class="line">		system(<span class="string">&quot;/bin/cat flag\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Wrong Password\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	close(fd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>注意到main函数中第一个if的小于号优先级大于等号，而open打开passcode是可以成功的，故open函数返回值不会小于0，所以fd的值为0，而fd又是read函数中的文件描述符，也就是说，read函数向pw_buf是从缓冲区读入的，然后我们再输入一个len为10的字符串pw_buf2，并在xor函数中依次与1做异或得到最终的pw_buf2，我们只需要让pw_buf与做完异或的pw_buf2相同即可，最简单的即：1111111111和0000000000</p>
-<p>![avatar](/home/zya1412/demo/source/_posts/Toddler’s Bottle/02.png)</p>
+<p>注意到main函数中第一个if的小于号优先级大于等号，而open打开passcode是可以成功的，故open函数返回值不会小于0，所以fd的值为0，而fd又是read函数中的文件描述符，也就是说，read函数向pw_buf是从缓冲区读入的，然后我们再输入一个len为10的字符串pw_buf2，并在xor函数中依次与1做异或得到最终的pw_buf2，我们只需要让pw_buf与做完异或的pw_buf2相同即可，最简单的即：1111111111和0000000000<br>![avatar](../Toddler’s Bottle/02.png)</p>
 
 </div>
   </div>
@@ -2551,7 +2550,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://yoursite.com/2021/10/09/Toddler'sBottle/>http://yoursite.com/2021/10/09/Toddler'sBottle/</a></p>
+                <p>本文永久链接是：<a href=http://yoursite.com/2021/10/09/pwn1/>http://yoursite.com/2021/10/09/pwn1/</a></p>
               
             
           </blockquote>
@@ -2568,7 +2567,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-09T05:32:03-07:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-09T06:48:13-07:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年10月9日</p>
@@ -2594,7 +2593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/10/09/Toddler'sBottle/&title=Toddler 's Bottle Write Up题解 - Zya's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/10/09/pwn1/&title=Toddler 's Bottle Write Up题解 - Zya's Blog&summary="
           
           >
           
@@ -2606,7 +2605,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/10/09/Toddler'sBottle/&title=Toddler 's Bottle Write Up题解 - Zya's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/10/09/pwn1/&title=Toddler 's Bottle Write Up题解 - Zya's Blog&summary="
           
           >
           
@@ -2618,7 +2617,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/10/09/Toddler'sBottle/&title=Toddler 's Bottle Write Up题解 - Zya's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/10/09/pwn1/&title=Toddler 's Bottle Write Up题解 - Zya's Blog&summary="
           
           >
           
@@ -2670,7 +2669,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2021/10/09/Toddler'sBottle/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2021/10/09/pwn1/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论</p>
     
@@ -2869,8 +2868,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633782907265')
-      volantis.js('/js/message.js?time=1633782907265', () => {
+      volantis.css('/css/message.css?time=1633787327202')
+      volantis.js('/js/message.js?time=1633787327202', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2915,8 +2914,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633782907265')
-      volantis.js('/js/message.js?time=1633782907265', () => {
+      volantis.css('/css/message.css?time=1633787327202')
+      volantis.js('/js/message.js?time=1633787327202', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2975,8 +2974,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1633782907265')
-      volantis.js('/js/message.js?time=1633782907265', () => {
+      volantis.css('/css/message.css?time=1633787327202')
+      volantis.js('/js/message.js?time=1633787327202', () => {
         hideMessage(done);
       });
     } else {
@@ -3194,7 +3193,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1633782907265')
+    volantis.js('/js/rightMenu.js?time=1633787327202')
   </script>
 
 
@@ -3208,19 +3207,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1633782907265")
+        volantis.js("/js/plugins/sites.js?time=1633787327202")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1633782907265")
+        volantis.js("/js/plugins/friends.js?time=1633787327202")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1633782907265")
+        volantis.js("/js/plugins/contributors.js?time=1633787327202")
       }
     
   };
@@ -3321,7 +3320,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1633782907265').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1633787327202').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3330,7 +3329,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1633782907265.js"></script>
+<script src="/js/app.js?time=1633787327202.js"></script>
 
 
 <!-- optional -->
@@ -3343,7 +3342,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1633782907265");
+    return volantis.js("/js/search/hexo.js?time=1633787327202");
   }
 
   function loadSearchService() {
@@ -3590,7 +3589,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ctf/","name":"ctf"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ctf/pwn/","name":"pwn"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/09/Toddler'sBottle/","name":"Toddler 's Bottle Write Up题解"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Toddler 's Bottle Write Up题解","description":"","datePublished":"2021-10-09T12:32:03.914Z","dateModified":"2021-10-09T12:32:03.930Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/09/Toddler'sBottle/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/09/Toddler'sBottle/","wordCount":0,"articleSection":"ctf","keywords":"pwn","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ctf/","name":"ctf"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ctf/pwn/","name":"pwn"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/09/pwn1/","name":"Toddler 's Bottle Write Up题解"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Toddler 's Bottle Write Up题解","description":"","datePublished":"2021-10-09T13:45:48.600Z","dateModified":"2021-10-09T13:48:13.381Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/09/pwn1/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/09/pwn1/","wordCount":0,"articleSection":"ctf","keywords":"pwn","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
