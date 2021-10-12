@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Chap5 匹配理论</title>
+      <link href="/2021/10/12/graphtheory/"/>
+      <url>/2021/10/12/graphtheory/</url>
+      
+        <content type="html"><![CDATA[<h1 id="匹配理论"><a href="#匹配理论" class="headerlink" title="匹配理论"></a>匹配理论</h1><h2 id="匹配的定义"><a href="#匹配的定义" class="headerlink" title="匹配的定义"></a>匹配的定义</h2><div class="story post-story"><p><strong>定义</strong>：设M是图G的边子集，且M的任意两条边都不相邻，则称M是G的一个<strong>匹配</strong>；M中同一条边的两个端点称为在M中<strong>相配</strong>；M中边的端点称为被M<strong>许配</strong>；若M中所有顶点都被M许配，则称M是G的<strong>完备匹配</strong>；G中边数最多的匹配称为G的<strong>最大匹配</strong>；若M是G的最大匹配，则称M中的边数|M|为G的匹配数，记作$\alpha(G)=|M|$。</p><p><strong>定义</strong>：设M是图G的匹配，$P=v_0e_1v_1e_2…e_kv_k$是G中的一条轨道（圈），若$e_1,e_2,…,e_k$在M与$E(G)-M$中交替出现，则称P是G中关于M的<strong>交错轨道（圈）</strong>。</p><p><strong>定义</strong>：设$P=v_0e_1v_1e_2…e_{2k+1}v_{2k+1}$是G中关于M的交错轨道，若$e_1,e_3,…,e_{2k+1} \notin M$，$e_2,e_4,…,e_{2k} \in M$且$v_0$与$v_{2k+1}$没有与M许配，则称P是G中关于M的可增广轨道。​</p><p><strong>引理</strong>：M是G的最大匹配，当且仅当G中没有关于M的可增广轨道。</p></div><h2 id="二分图中的匹配"><a href="#二分图中的匹配" class="headerlink" title="二分图中的匹配"></a>二分图中的匹配</h2><div class="story post-story"><p><strong>定理</strong>(Hall)：设G是二分图，其顶点集合划分为$V(G) = X \cup Y,X \cap Y = \varnothing$​，则G中存在将X中顶点都许配的匹配，当且仅当任给$ S \subseteq X$，都有$|N(S)| \geq |S|$，其中N(S)是与S中顶点相邻的顶点构成的集合，简称为S的邻顶集合。​​</p><p><strong>推论</strong>：对正整数k &gt; 0,k次正则二分图G有完全匹配。</p><p><strong>定义</strong>：设G是一个图，C是其顶点集合的子集，即$C \subseteq V(G)$，若G中任意一条边都有一个端点属于C，则称C是G的一个<strong>覆盖</strong>，若C是G的覆盖，但C的任何真子集都不是G的覆盖，则称C是G的<strong>极小覆盖</strong>；若$C^*$是G的覆盖，且不存在G的覆盖C，使得|C|&lt;|$C^*$|，则称$C^*$是G的最小覆盖，且称|$C^*$|是G的<strong>覆盖数</strong>，记作$\beta(G)$。</p><p><strong>引理</strong>：假设C是图G的覆盖，M是图G的匹配，则|C|$\geq$|M|</p><p><strong>引理</strong>：若图G存在覆盖C和匹配M，使得|C|=|M|，则C是最小覆盖，M是最大匹配。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> -[ustc,图论] -[数学,图论] </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>寄存器</title>
       <link href="/2021/10/12/assembly/"/>
       <url>/2021/10/12/assembly/</url>
