@@ -20,7 +20,7 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1634053184626" as="style">
+  <link rel="preload" href="/css/style.css?time=1634110993807" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-12T15:32:22.667Z">
-<meta property="article:modified_time" content="2021-10-12T15:39:18.172Z">
+<meta property="article:modified_time" content="2021-10-13T07:42:40.707Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1634053184626" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1634053184626"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1634110993807" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1634110993807"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2462,22 +2462,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/ustc/">ustc</a><span class="sep"></span><a class="category-link" href="/categories/ustc/%E5%9B%BE%E8%AE%BA/">图论</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/graphtheory/">graphtheory</a>
+    <a class="category-link" href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/">-[ustc,图论] -[数学,图论]</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/ustc/" itemprop="url"><span itemprop="name">ustc</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/ustc/%E5%9B%BE%E8%AE%BA/" itemprop="url"><span itemprop="name">图论</span></a>
-      </span>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%95%B0%E5%AD%A6/graphtheory/" itemprop="url"><span itemprop="name">graphtheory</span></a>
+        <a href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/" itemprop="url"><span itemprop="name">-[ustc,图论] -[数学,图论]</span></a>
       </span>
     
   </div>
@@ -2514,11 +2502,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><strong>定义</strong>：设M是图G的匹配，$P=v_0e_1v_1e_2…e_kv_k$是G中的一条轨道（圈），若$e_1,e_2,…,e_k$在M与$E(G)-M$中交替出现，则称P是G中关于M的<strong>交错轨道（圈）</strong>。</p>
 <p><strong>定义</strong>：设$P=v_0e_1v_1e_2…e_{2k+1}v_{2k+1}$是G中关于M的交错轨道，若$e_1,e_3,…,e_{2k+1} \notin M$，$e_2,e_4,…,e_{2k} \in M$且$v_0$与$v_{2k+1}$没有与M许配，则称P是G中关于M的可增广轨道。​</p>
 <p><strong>引理</strong>：M是G的最大匹配，当且仅当G中没有关于M的可增广轨道。</p>
-</div><h2 id="二分图中的匹配"><a href="#二分图中的匹配" class="headerlink" title="二分图中的匹配"></a>二分图中的匹配</h2><div class="story post-story"><p><strong>定理</strong>(Hall)：设G是二分图，其顶点集合划分为$V(G) = X \cup Y,X \cap Y = \varnothing$​，则G中存在将X中顶点都许配的匹配，当且仅当任给$ S \subseteq X$，都有$|N(S)| \geq |S|$，其中N(S)是与S中顶点相邻的顶点构成的集合，简称为S的邻顶集合。​​</p>
+</div><h2 id="二分图中的匹配"><a href="#二分图中的匹配" class="headerlink" title="二分图中的匹配"></a>二分图中的匹配</h2><div class="story post-story"><p>**定理(Hall)**：设G是二分图，其顶点集合划分为$V(G) = X \cup Y,X \cap Y = \varnothing$​，则G中存在将X中顶点都许配的匹配，当且仅当任给$ S \subseteq X$，都有$|N(S)| \geq |S|$，其中N(S)是与S中顶点相邻的顶点构成的集合，简称为S的邻顶集合。​​</p>
 <p><strong>推论</strong>：对正整数k &gt; 0,k次正则二分图G有完全匹配。</p>
-<p><strong>定义</strong>：设G是一个图，C是其顶点集合的子集，即$C \subseteq V(G)$，若G中任意一条边都有一个端点属于C，则称C是G的一个<strong>覆盖</strong>，若C是G的覆盖，但C的任何真子集都不是G的覆盖，则称C是G的<strong>极小覆盖</strong>；若$C^*$是G的覆盖，且不存在G的覆盖C，使得|C|&lt;|$C^*$|，则称$C^*$是G的最小覆盖，且称|$C^*$|是G的<strong>覆盖数</strong>，记作$\beta(G)$。</p>
+<p><strong>定义</strong>：设G是一个图，C是其顶点集合的子集，即$C \subseteq V(G)$​，若G中任意一条边都有一个端点属于C，则称C是G的一个<strong>覆盖</strong>，若C是G的覆盖，但C的任何真子集都不是G的覆盖，则称C是G的<strong>极小覆盖</strong>；若$C^*$​是G的覆盖，且不存在G的覆盖C，使得|C|&lt;|$C^*$​|，则称$C^*$​是G的<strong>最小覆盖</strong>，且称|$C^*$|是G的<strong>覆盖数</strong>，记作$\beta(G)$​。</p>
 <p><strong>引理</strong>：假设C是图G的覆盖，M是图G的匹配，则|C|$\geq$|M|</p>
 <p><strong>引理</strong>：若图G存在覆盖C和匹配M，使得|C|=|M|，则C是最小覆盖，M是最大匹配。</p>
+<p><strong>定理</strong>(Konig-Egervary)：设G是二分图，则G的匹配数等于其覆盖数，即$\alpha(G)=\beta(G)$</p>
+<p><strong>二分图匹配研究中一个重要的构造</strong>：$V(G) = X \cup Y,X \cap Y = \varnothing$​，M为图G的最大匹配，设$u \in X$​​未被M许配，设Z是通过交替轨道与u相连的顶点集合，令$S=X \cap Z,T=Y \cap Z$</p>
+</div><h2 id="任意图完备匹配"><a href="#任意图完备匹配" class="headerlink" title="任意图完备匹配"></a>任意图完备匹配</h2><div class="story post-story"><p><strong>定义</strong>：设G’是图G的连通片，若$V(G_{‘})$​​​是奇数，则称G’是G的<strong>奇片</strong>，否则称之为G的<strong>偶片</strong>，我们用o(G)表示G中奇片的个数。</p>
+<p><strong>定理</strong>(Tutte)：G有完备匹配，当且仅当任给$S \subseteq V(G)$，都有$o(G-S) \leq |S|$</p>
+<p><strong>证明必要性的过程中建立的奇片到S顶点的映射思路值得借鉴</strong></p>
 
 </div>
   </div>
@@ -2555,10 +2548,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-12T08:39:18-07:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-13T00:42:40-07:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月12日</p>
+    <p>更新于：2021年10月13日</p>
   </a>
 </div>
 
@@ -2692,7 +2685,7 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">匹配的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%8C%B9%E9%85%8D"><span class="toc-text">二分图中的匹配</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">匹配的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE%E4%B8%AD%E7%9A%84%E5%8C%B9%E9%85%8D"><span class="toc-text">二分图中的匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%9B%BE%E5%AE%8C%E5%A4%87%E5%8C%B9%E9%85%8D"><span class="toc-text">任意图完备匹配</span></a></li></ol>
     </div>
   </section>
 
@@ -2858,8 +2851,8 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634053184626')
-      volantis.js('/js/message.js?time=1634053184626', () => {
+      volantis.css('/css/message.css?time=1634110993807')
+      volantis.js('/js/message.js?time=1634110993807', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2904,8 +2897,8 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634053184626')
-      volantis.js('/js/message.js?time=1634053184626', () => {
+      volantis.css('/css/message.css?time=1634110993807')
+      volantis.js('/js/message.js?time=1634110993807', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2964,8 +2957,8 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634053184626')
-      volantis.js('/js/message.js?time=1634053184626', () => {
+      volantis.css('/css/message.css?time=1634110993807')
+      volantis.js('/js/message.js?time=1634110993807', () => {
         hideMessage(done);
       });
     } else {
@@ -3183,7 +3176,7 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1634053184626')
+    volantis.js('/js/rightMenu.js?time=1634110993807')
   </script>
 
 
@@ -3197,19 +3190,19 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1634053184626")
+        volantis.js("/js/plugins/sites.js?time=1634110993807")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1634053184626")
+        volantis.js("/js/plugins/friends.js?time=1634110993807")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1634053184626")
+        volantis.js("/js/plugins/contributors.js?time=1634110993807")
       }
     
   };
@@ -3310,7 +3303,7 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1634053184626').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1634110993807').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3319,7 +3312,7 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
 
 
 
-<script src="/js/app.js?time=1634053184626.js"></script>
+<script src="/js/app.js?time=1634110993807.js"></script>
 
 
 <!-- optional -->
@@ -3332,7 +3325,7 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1634053184626");
+    return volantis.js("/js/search/hexo.js?time=1634110993807");
   }
 
   function loadSearchService() {
@@ -3399,6 +3392,60 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
 
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
+
+    <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
 
 </pjax>
 
@@ -3579,7 +3626,7 @@ AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八�
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/数学/","name":"数学"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc/","name":"ustc"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc/图论/","name":"图论"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/数学/graphtheory/","name":"graphtheory"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/graphtheory/","name":"Chap5 匹配理论"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Chap5 匹配理论","description":"","datePublished":"2021-10-12T15:32:22.667Z","dateModified":"2021-10-12T15:39:18.172Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/graphtheory/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/graphtheory/","wordCount":0,"articleSection":"数学","keywords":"图论","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc-图论-数学-图论/","name":"-[ustc,图论] -[数学,图论]"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/graphtheory/","name":"Chap5 匹配理论"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Chap5 匹配理论","description":"","datePublished":"2021-10-12T15:32:22.667Z","dateModified":"2021-10-13T07:42:40.707Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/graphtheory/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/graphtheory/","wordCount":0,"articleSection":"-[ustc,图论] -[数学,图论]","keywords":"图论","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

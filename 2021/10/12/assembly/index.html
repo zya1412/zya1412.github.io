@@ -20,7 +20,7 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1634053184628" as="style">
+  <link rel="preload" href="/css/style.css?time=1634110993809" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-12T12:10:10.843Z">
-<meta property="article:modified_time" content="2021-10-12T12:12:58.064Z">
+<meta property="article:modified_time" content="2021-10-13T07:40:06.211Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1634053184628" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1634053184628"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1634110993809" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1634110993809"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2522,7 +2522,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>mov al,20000      ;超过寄存器储存限制</li>
 <li>add al,100H         ;将高于八位的数传入八位寄存器</li>
 </ol>
-</div><h2 id="8086CPU给出物理地址的方法"><a href="#8086CPU给出物理地址的方法" class="headerlink" title="8086CPU给出物理地址的方法"></a>8086CPU给出物理地址的方法</h2><div class="story post-story"><p><img src="/home/zya1412/demo/source/_posts/assembly/A1.png" class="lazyload" data-srcset="/home/zya1412/demo/source/_posts/assembly/A1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="avatar"></p>
+</div><h2 id="8086CPU给出物理地址的方法"><a href="#8086CPU给出物理地址的方法" class="headerlink" title="8086CPU给出物理地址的方法"></a>8086CPU给出物理地址的方法</h2><div class="story post-story"><p><img src="C:\Users\Zya1412\Desktop\Assembly\A1.png" class="lazyload" data-srcset="C:\Users\Zya1412\Desktop\Assembly\A1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="A1"></p>
 <p>当8086CPU读写内存时：</p>
 <ol>
 <li>CPU中的相关部件提供两个十六位地址，一个称为段地址，另一个称为偏移地址；</li>
@@ -2535,7 +2535,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>地址加法器的合成方法：<strong>物理地址=段地址&lt;&lt;4+偏移地址</strong></p>
 <p>偏移地址为16位，16位的寻址能力位64KB，所以一个段的长度最大为64KB。</p>
 </div><h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><div class="story post-story"><p>我们介绍关于段地址的一些寄存器，段地址在8086CPU的段寄存器中存放，这四个寄存器为：CS，DS，SS，ES</p>
-<h3 id="CS-amp-IP"><a href="#CS-amp-IP" class="headerlink" title="CS&amp;IP"></a>CS&amp;IP</h3>
+<h3 id="CS-amp-IP"><a href="#CS-amp-IP" class="headerlink" title="CS&amp;IP"></a>CS&amp;IP</h3><p>CS和Ip是8086CPU中最关键的两个寄存器：CS是代码段寄存器；IP是指令指针寄存器。指令地址即CS&lt;&lt;4+IP。</p>
+<p>8086CPU的工作过程可简要描述如下：</p>
+<ol>
+<li>从CS:IP指向的内存单元读取指令，读取的指令进入指令缓存器；</li>
+<li>IP=IP+所读取的指令长度，从而指向下一条指令；</li>
+<li>执行指令。转到步骤(1),重复这个过程。</li>
+</ol>
+<h3 id="修改CS、IP的指令"><a href="#修改CS、IP的指令" class="headerlink" title="修改CS、IP的指令"></a>修改CS、IP的指令</h3><p>mov指令未提供修改CS、IP指令的功能(大概是因为这会引起混乱)</p>
+<p>但我们可以通过“jmp 段地址:偏移地址”修改CS，IP。若想仅修改IP的内容，可用“jmp 某寄存器”的形式完成，如：jmp ax这个指令形式上等价于mov IP,ax</p>
+</div><h2 id="内存中字的存储"><a href="#内存中字的存储" class="headerlink" title="内存中字的存储"></a>内存中字的存储</h2><div class="story post-story"><p>CPU中，用16位寄存器来存储一个字。高8位存放高位字节，低8位存放低位字节。由于内存单元是字节单元，所以一个字需要两个地址连续的内存单元来存放。</p>
+<p>由此我们引出字单元的概念：字单元即存放一个字形数据(16位)的内存单元，由两个地址连续的内存单元组成。</p>
+</div><h2 id="DS和-address"><a href="#DS和-address" class="headerlink" title="DS和[address]"></a>DS和[address]</h2><div class="story post-story"><p>CPU读取一个内存单元时，必须先给出这个内存单元的地址，在8086PC中，内存地址由段地址和偏移地址组成。DS寄存器通常存放要访问数据的段地址。比如要读取/写入10000H单元的内容过程可如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">;read</span><br><span class="line">mov bx,1000H</span><br><span class="line">mov ds,bx</span><br><span class="line">mov al,[0]</span><br><span class="line">;write</span><br><span class="line">mov bx,1000H</span><br><span class="line">mov ds,bx</span><br><span class="line">mov [0],cx</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：8086CPU不支持将立即数传入ds寄存器的操作，故我们需要先将地址装入另一个无关寄存器，再通过这个寄存器放入ds。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">;一些基础指令</span><br><span class="line">mov ax,bx ;将bx移入ax</span><br><span class="line">add ax,bx ;将ax与bx求和放入ax</span><br><span class="line">sub ax,bx ;将ax-bx放入ax</span><br><span class="line">;这三个指令支持的类型有三个：寄存器，存储单元，立即数</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="CPU的栈机制"><a href="#CPU的栈机制" class="headerlink" title="CPU的栈机制"></a>CPU的栈机制</h2><div class="story post-story"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push ax	;将ax的数据入栈</span><br><span class="line">pop ax	;将栈顶的数据弹出并存入ax</span><br><span class="line">;栈的操作支持数据存储类型：存储单元，寄存器</span><br></pre></td></tr></table></figure>
+
+<p>关于栈，8086CPU存在两个寄存器：段寄存器SS和寄存器SP。</p>
+<p>栈顶段地址存放在SS中，偏移地址存放在SP中。任意时刻SS:SP指向栈顶元素。push/pop指令执行时，CPU从SS和SP中得到栈顶的地址。</p>
+<p>注意到：SS:SP的机制与CS:IP的机制相同，故一个栈段的大小也为64KB。</p>
+
 </div>
   </div>
   
@@ -2571,10 +2593,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-12T05:12:58-07:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-13T00:40:06-07:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月12日</p>
+    <p>更新于：2021年10月13日</p>
   </a>
 </div>
 
@@ -2711,7 +2733,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">修改CS、IP的指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">内存中字的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-text">DS和[address]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%A0%88%E6%9C%BA%E5%88%B6"><span class="toc-text">CPU的栈机制</span></a></li></ol>
     </div>
   </section>
 
@@ -2877,8 +2899,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634053184628')
-      volantis.js('/js/message.js?time=1634053184628', () => {
+      volantis.css('/css/message.css?time=1634110993809')
+      volantis.js('/js/message.js?time=1634110993809', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2923,8 +2945,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634053184628')
-      volantis.js('/js/message.js?time=1634053184628', () => {
+      volantis.css('/css/message.css?time=1634110993809')
+      volantis.js('/js/message.js?time=1634110993809', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2983,8 +3005,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634053184628')
-      volantis.js('/js/message.js?time=1634053184628', () => {
+      volantis.css('/css/message.css?time=1634110993809')
+      volantis.js('/js/message.js?time=1634110993809', () => {
         hideMessage(done);
       });
     } else {
@@ -3202,7 +3224,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1634053184628')
+    volantis.js('/js/rightMenu.js?time=1634110993809')
   </script>
 
 
@@ -3216,19 +3238,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1634053184628")
+        volantis.js("/js/plugins/sites.js?time=1634110993809")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1634053184628")
+        volantis.js("/js/plugins/friends.js?time=1634110993809")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1634053184628")
+        volantis.js("/js/plugins/contributors.js?time=1634110993809")
       }
     
   };
@@ -3329,7 +3351,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1634053184628').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1634110993809').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3338,7 +3360,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1634053184628.js"></script>
+<script src="/js/app.js?time=1634110993809.js"></script>
 
 
 <!-- optional -->
@@ -3351,7 +3373,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1634053184628");
+    return volantis.js("/js/search/hexo.js?time=1634110993809");
   }
 
   function loadSearchService() {
@@ -3598,7 +3620,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/","name":"寄存器"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"寄存器","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-12T12:12:58.064Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/","name":"寄存器"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"寄存器","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-13T07:40:06.211Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
