@@ -20,23 +20,23 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1634110993809" as="style">
+  <link rel="preload" href="/css/style.css?time=1634646298443" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>寄存器 - Zya's Blog</title>
+  <title>汇编语言笔记 - Zya's Blog</title>
   <meta name="keywords" content="汇编语言,null">
-  <meta name="description" content="通用寄存器以16位寄存器为例，我们记为AX[15:0] AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL） 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。 几条汇编指令 mov ax,18：将18送入ax寄存器 mov">
+  <meta name="description" content="寄存器通用寄存器以16位寄存器为例，我们记为AX[15:0] AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL） 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。 几条汇编指令 mov ax,18：将18送入ax寄存器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寄存器">
+<meta property="og:title" content="汇编语言笔记">
 <meta property="og:url" content="http://yoursite.com/2021/10/12/assembly/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
-<meta property="og:description" content="通用寄存器以16位寄存器为例，我们记为AX[15:0] AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL） 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。 几条汇编指令 mov ax,18：将18送入ax寄存器 mov">
+<meta property="og:description" content="寄存器通用寄存器以16位寄存器为例，我们记为AX[15:0] AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL） 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。 几条汇编指令 mov ax,18：将18送入ax寄存器">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-12T12:10:10.843Z">
-<meta property="article:modified_time" content="2021-10-13T07:40:06.211Z">
+<meta property="article:modified_time" content="2021-10-19T12:23:55.293Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1634110993809" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1634110993809"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1634646298443" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1634646298443"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2443,7 +2443,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        寄存器
+        汇编语言笔记
       </h1>
       <div class='new-meta-box'>
         
@@ -2502,7 +2502,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><div class="story post-story"><p>以16位寄存器为例，我们记为AX[15:0]</p>
+    <h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><div class="story post-story"><p>以16位寄存器为例，我们记为AX[15:0]</p>
 <p>AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL）</p>
 </div><h2 id="字在寄存器中的存储"><a href="#字在寄存器中的存储" class="headerlink" title="字在寄存器中的存储"></a>字在寄存器中的存储</h2><div class="story post-story"><p>字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。</p>
 <p>字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。</p>
@@ -2557,6 +2557,67 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>关于栈，8086CPU存在两个寄存器：段寄存器SS和寄存器SP。</p>
 <p>栈顶段地址存放在SS中，偏移地址存放在SP中。任意时刻SS:SP指向栈顶元素。push/pop指令执行时，CPU从SS和SP中得到栈顶的地址。</p>
 <p>注意到：SS:SP的机制与CS:IP的机制相同，故一个栈段的大小也为64KB。</p>
+<p>[bx]表示一个内存单元，它的偏移地址在bx中</p>
+<p>我们定义(reg)表示寄存器中的数据</p>
+<h1 id="Loop指令"><a href="#Loop指令" class="headerlink" title="Loop指令"></a>Loop指令</h1><p>loop指令的格式：loop标号，CPU执行loop指令时，要进行两部操作：</p>
+<ol>
+<li>(cx)=(cx)-1</li>
+<li>判断cx的值，不为0则转至标号处执行程序，如果为0则向下执行</li>
+</ol>
+<p>eg：计算2^12</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">	mov ax,2</span><br><span class="line">	</span><br><span class="line">	mov cx,11</span><br><span class="line">s:	add ax,ax</span><br><span class="line">	loop s</span><br><span class="line">	mov ax,4c00h</span><br><span class="line">	int 21h</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="段前缀"><a href="#段前缀" class="headerlink" title="段前缀"></a>段前缀</h2><div class="story post-story"><p>在普通的mov ax,[bx]指令中，内存单元的偏移地址由bx给出，而段地址默认在ds中。我们可以在访问内存单元的指令中显式地给出内存单元的段地址所在的段寄存器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov ax,ds:[bx]</span><br><span class="line">mov ax,cs:[bx]</span><br><span class="line">mov ax,ss:[bx]</span><br><span class="line">mov ax,es:[bx]</span><br></pre></td></tr></table></figure>
+
+<p>以上的ds,cs,es,ss均为<strong>段前缀</strong></p>
+<h1 id="更灵活的定位内存地址的方法"><a href="#更灵活的定位内存地址的方法" class="headerlink" title="更灵活的定位内存地址的方法"></a>更灵活的定位内存地址的方法</h1></div><h2 id="and-amp-or指令"><a href="#and-amp-or指令" class="headerlink" title="and &amp; or指令"></a>and &amp; or指令</h2><div class="story post-story"><p>and指令：做按位与</p>
+<p>or指令：做按位或</p>
+</div><h2 id="bx-idata"><a href="#bx-idata" class="headerlink" title="[bx + idata]"></a>[bx + idata]</h2><div class="story post-story"><p><strong>寄存器相对寻址</strong></p>
+<p>[bx + idata]表示一个内存单元，它的偏移地址为(bx)+idata(bx中的数值加idata)</p>
+<p>eg：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[200+bx]</span><br></pre></td></tr></table></figure>
+
+<p>这个命令是将((ds)*16+(bx)+200)送入ax中</p>
+<p>有了这种记录方式，就可以利用loops循环操作数组(不断改变bx来改变偏移量)</p>
+</div><h2 id="SI和DI"><a href="#SI和DI" class="headerlink" title="SI和DI"></a>SI和DI</h2><div class="story post-story"><p><strong>基址变址寻址</strong></p>
+<p>SI和DI是x86中和bx功能相似的寄存器，它们不能被分为两个8位寄存器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[200+si]</span><br><span class="line">mov ax,[s00+di]</span><br></pre></td></tr></table></figure>
+
+<p><strong>相对基址变址寻址</strong></p>
+<p>可以用bx，si，di，idata互相组合构成偏移量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[bx+idata]</span><br><span class="line">mov ax,[bx+si]</span><br><span class="line">mov ax,[bx+di]</span><br><span class="line">mov ax,[bx+si+idata]</span><br><span class="line">mov ax,[bx+di+idata]</span><br><span class="line">mov ax,[bx+si+di+idata]</span><br></pre></td></tr></table></figure>
+
+<p>可以操作二，三维数组。bp寄存器与si，di作用相同。</p>
+</div><h2 id="指令要处理的数据长度"><a href="#指令要处理的数据长度" class="headerlink" title="指令要处理的数据长度"></a>指令要处理的数据长度</h2><div class="story post-story"><h3 id="通过寄存器名指明要处理的数据尺寸"><a href="#通过寄存器名指明要处理的数据尺寸" class="headerlink" title="通过寄存器名指明要处理的数据尺寸"></a>通过寄存器名指明要处理的数据尺寸</h3><h4 id="字操作"><a href="#字操作" class="headerlink" title="字操作"></a>字操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov ax,1</span><br><span class="line">mov bx,ds:[0]</span><br><span class="line">inc ax</span><br><span class="line">add ax,1000</span><br></pre></td></tr></table></figure>
+
+<h4 id="字节操作"><a href="#字节操作" class="headerlink" title="字节操作"></a>字节操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mov al,1</span><br><span class="line">mov al,bl</span><br><span class="line">mov al,ds:[0]</span><br><span class="line">inc al</span><br><span class="line">add al,100</span><br></pre></td></tr></table></figure>
+
+<h3 id="用操作符-X-ptr-指明内存单元的长度"><a href="#用操作符-X-ptr-指明内存单元的长度" class="headerlink" title="用操作符 X ptr 指明内存单元的长度"></a>用操作符 X ptr 指明内存单元的长度</h3><p>X可以为word或byte</p>
+<h4 id="word-ptr指明内存单元为字单元"><a href="#word-ptr指明内存单元为字单元" class="headerlink" title="word ptr指明内存单元为字单元"></a>word ptr指明内存单元为字单元</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br><span class="line">inc word ptr [bx]</span><br><span class="line">add word ptr [bx],2</span><br></pre></td></tr></table></figure>
+
+<h4 id="byte-ptr指明内存单元为字节单元"><a href="#byte-ptr指明内存单元为字节单元" class="headerlink" title="byte ptr指明内存单元为字节单元"></a>byte ptr指明内存单元为字节单元</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov byte ptr ds:[0],1</span><br><span class="line">inc byte ptr [bx]</span><br><span class="line">add byte ptr [bx],2</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="div指令"><a href="#div指令" class="headerlink" title="div指令"></a>div指令</h2><div class="story post-story"><p>div为除法指令：</p>
+<ol>
+<li><p>除数：有8位或16位两种，在一个reg或内存单元中。</p>
+</li>
+<li><p>被除数：默认放在ax/dx&amp;ax中，若除数8位，被除数则为16位，默认在ax中存放；若除数为16位，被除数则为32位，在dx和ax中存放，dx放高16位，ax放低16位。</p>
+</li>
+<li><p>结果：如果除数为8位，则al存储除法操作的商，ah放余数；若除数为16位，则ax存储商，dx存储余数。</p>
+</li>
+</ol>
+<p>格式如下：</p>
+<p>div reg</p>
+<p>div 内存单元</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div byte ptr ds:[0]</span><br><span class="line">div word ptr es:[0]</span><br><span class="line">div word ptr [bx+si+8]</span><br><span class="line">div byte ptr [bx+si+8]</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="伪指令dd"><a href="#伪指令dd" class="headerlink" title="伪指令dd"></a>伪指令dd</h2><div class="story post-story"><p>db为字节型数据，dw为字型数据，dd为double型数据(32位)</p>
+</div><h2 id="dup操作符"><a href="#dup操作符" class="headerlink" title="dup操作符"></a>dup操作符</h2><div class="story post-story"><p>dup用来与dw，db，dd等数据定义伪指令配合使用的，用来进行数据的重复：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db 3 dup (0)				;等价于db 0,0,0</span><br><span class="line">db 3 dup (0,1,2)			;等价于db 0,1,2,0,1,2,0,1,2</span><br><span class="line">db 3 dup (&#x27;abc&#x27;,&#x27;ABC&#x27;)		;等价于db‘abcABCabcABCabcABC&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
 
 </div>
   </div>
@@ -2593,10 +2654,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-13T00:40:06-07:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-19T05:23:55-07:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月13日</p>
+    <p>更新于：2021年10月19日</p>
   </a>
 </div>
 
@@ -2619,7 +2680,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/10/12/assembly/&title=寄存器 - Zya's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/10/12/assembly/&title=汇编语言笔记 - Zya's Blog&summary="
           
           >
           
@@ -2631,7 +2692,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/10/12/assembly/&title=寄存器 - Zya's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/10/12/assembly/&title=汇编语言笔记 - Zya's Blog&summary="
           
           >
           
@@ -2643,7 +2704,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/10/12/assembly/&title=寄存器 - Zya's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/10/12/assembly/&title=汇编语言笔记 - Zya's Blog&summary="
           
           >
           
@@ -2733,7 +2794,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">修改CS、IP的指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">内存中字的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-text">DS和[address]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%A0%88%E6%9C%BA%E5%88%B6"><span class="toc-text">CPU的栈机制</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">修改CS、IP的指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">内存中字的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-text">DS和[address]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%A0%88%E6%9C%BA%E5%88%B6"><span class="toc-text">CPU的栈机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%89%8D%E7%BC%80"><span class="toc-text">段前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#and-amp-or%E6%8C%87%E4%BB%A4"><span class="toc-text">and &amp; or指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bx-idata"><span class="toc-text">[bx + idata]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SI%E5%92%8CDI"><span class="toc-text">SI和DI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E9%95%BF%E5%BA%A6"><span class="toc-text">指令要处理的数据长度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AF%84%E5%AD%98%E5%99%A8%E5%90%8D%E6%8C%87%E6%98%8E%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E5%B0%BA%E5%AF%B8"><span class="toc-text">通过寄存器名指明要处理的数据尺寸</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E6%93%8D%E4%BD%9C"><span class="toc-text">字操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C"><span class="toc-text">字节操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6-X-ptr-%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">用操作符 X ptr 指明内存单元的长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#word-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E5%8D%95%E5%85%83"><span class="toc-text">word ptr指明内存单元为字单元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#byte-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83"><span class="toc-text">byte ptr指明内存单元为字节单元</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#div%E6%8C%87%E4%BB%A4"><span class="toc-text">div指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4dd"><span class="toc-text">伪指令dd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dup%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">dup操作符</span></a></li></ol>
     </div>
   </section>
 
@@ -2785,7 +2846,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="寄存器";
+  pdata.postTitle="汇编语言笔记";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2899,8 +2960,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634110993809')
-      volantis.js('/js/message.js?time=1634110993809', () => {
+      volantis.css('/css/message.css?time=1634646298443')
+      volantis.js('/js/message.js?time=1634646298443', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2945,8 +3006,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634110993809')
-      volantis.js('/js/message.js?time=1634110993809', () => {
+      volantis.css('/css/message.css?time=1634646298443')
+      volantis.js('/js/message.js?time=1634646298443', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3005,8 +3066,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634110993809')
-      volantis.js('/js/message.js?time=1634110993809', () => {
+      volantis.css('/css/message.css?time=1634646298443')
+      volantis.js('/js/message.js?time=1634646298443', () => {
         hideMessage(done);
       });
     } else {
@@ -3224,7 +3285,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1634110993809')
+    volantis.js('/js/rightMenu.js?time=1634646298443')
   </script>
 
 
@@ -3238,19 +3299,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1634110993809")
+        volantis.js("/js/plugins/sites.js?time=1634646298443")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1634110993809")
+        volantis.js("/js/plugins/friends.js?time=1634646298443")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1634110993809")
+        volantis.js("/js/plugins/contributors.js?time=1634646298443")
       }
     
   };
@@ -3351,7 +3412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1634110993809').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1634646298443').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3360,7 +3421,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1634110993809.js"></script>
+<script src="/js/app.js?time=1634646298443.js"></script>
 
 
 <!-- optional -->
@@ -3373,7 +3434,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1634110993809");
+    return volantis.js("/js/search/hexo.js?time=1634646298443");
   }
 
   function loadSearchService() {
@@ -3620,7 +3681,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/","name":"寄存器"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"寄存器","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-13T07:40:06.211Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/","name":"汇编语言笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"汇编语言笔记","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-19T12:23:55.293Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

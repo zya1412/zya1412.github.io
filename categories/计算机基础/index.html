@@ -20,7 +20,7 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1634110993843" as="style">
+  <link rel="preload" href="/css/style.css?time=1634646298536" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1655,8 +1655,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1634110993843" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1634110993843"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1634646298536" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1634646298536"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2452,20 +2452,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     <h2 class="article-title"  itemprop="name headline">
       <a href="/2021/10/12/assembly/"  itemprop="url">
-        寄存器
+        汇编语言笔记
       </a>
     </h2>
   
   <div class='md' itemprop="articleBody">
     
       
-        通用寄存器以16位寄存器为例，我们记为AX[15:0]
+        寄存器通用寄存器以16位寄存器为例，我们记为AX[15:0]
 AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL）
 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。
 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。
 几条汇编指令
-mov ax,18：将18送入ax寄存器
-...
+mov ax,18：将18送入ax寄...
       
     
   </div>
@@ -2818,8 +2817,8 @@ mov ax,18：将18送入ax寄存器
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634110993843')
-      volantis.js('/js/message.js?time=1634110993843', () => {
+      volantis.css('/css/message.css?time=1634646298536')
+      volantis.js('/js/message.js?time=1634646298536', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2864,8 +2863,8 @@ mov ax,18：将18送入ax寄存器
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634110993843')
-      volantis.js('/js/message.js?time=1634110993843', () => {
+      volantis.css('/css/message.css?time=1634646298536')
+      volantis.js('/js/message.js?time=1634646298536', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2924,8 +2923,8 @@ mov ax,18：将18送入ax寄存器
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634110993843')
-      volantis.js('/js/message.js?time=1634110993843', () => {
+      volantis.css('/css/message.css?time=1634646298536')
+      volantis.js('/js/message.js?time=1634646298536', () => {
         hideMessage(done);
       });
     } else {
@@ -3143,7 +3142,7 @@ mov ax,18：将18送入ax寄存器
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1634110993843')
+    volantis.js('/js/rightMenu.js?time=1634646298536')
   </script>
 
 
@@ -3157,19 +3156,19 @@ mov ax,18：将18送入ax寄存器
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1634110993843")
+        volantis.js("/js/plugins/sites.js?time=1634646298536")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1634110993843")
+        volantis.js("/js/plugins/friends.js?time=1634646298536")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1634110993843")
+        volantis.js("/js/plugins/contributors.js?time=1634646298536")
       }
     
   };
@@ -3270,7 +3269,7 @@ mov ax,18：将18送入ax寄存器
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1634110993843').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1634646298536').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3279,7 +3278,7 @@ mov ax,18：将18送入ax寄存器
 
 
 
-<script src="/js/app.js?time=1634110993843.js"></script>
+<script src="/js/app.js?time=1634646298536.js"></script>
 
 
 <!-- optional -->
@@ -3292,7 +3291,7 @@ mov ax,18：将18送入ax寄存器
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1634110993843");
+    return volantis.js("/js/search/hexo.js?time=1634646298536");
   }
 
   function loadSearchService() {
