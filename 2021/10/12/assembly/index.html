@@ -20,7 +20,7 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1634656225913" as="style">
+  <link rel="preload" href="/css/style.css?time=1634740044857" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-12T12:10:10.843Z">
-<meta property="article:modified_time" content="2021-10-19T12:23:55.293Z">
+<meta property="article:modified_time" content="2021-10-20T14:26:22.826Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1634656225913" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1634656225913"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1634740044857" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1634740044857"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2616,8 +2616,67 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div><h2 id="dup操作符"><a href="#dup操作符" class="headerlink" title="dup操作符"></a>dup操作符</h2><div class="story post-story"><p>dup用来与dw，db，dd等数据定义伪指令配合使用的，用来进行数据的重复：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db 3 dup (0)				;等价于db 0,0,0</span><br><span class="line">db 3 dup (0,1,2)			;等价于db 0,1,2,0,1,2,0,1,2</span><br><span class="line">db 3 dup (&#x27;abc&#x27;,&#x27;ABC&#x27;)		;等价于db‘abcABCabcABCabcABC&#x27;</span><br></pre></td></tr></table></figure>
 
+<h1 id="转移指令"><a href="#转移指令" class="headerlink" title="转移指令"></a>转移指令</h1><p>可以修改IP，或同时修改CS和IP的指令称为转移指令；概括的说，转移指令就是可以控制CPU执行内存中某处代码的指令。</p>
+<p>x86中转移有以下几类：</p>
+<ol>
+<li>只修改IP时，称为段内转移，比如jmp ax</li>
+<li>同时修改CS和IP时，称为段间转移，比如jmp 1000：0</li>
+</ol>
+<p>由于转移指令对IP的修改范围不同，段内转移又分为：短转移和近转移。</p>
+<ol>
+<li>短转移的IP修改范围为-128~127</li>
+<li>近转移的IP修改范围为-32768~32767</li>
+</ol>
+<p>x86的转移指令分为以下几类：</p>
+<ol>
+<li>无条件转移指令</li>
+<li>条件转移指令</li>
+<li>循环指令</li>
+<li>过程</li>
+<li>中断</li>
+</ol>
+</div><h2 id="操作符offset"><a href="#操作符offset" class="headerlink" title="操作符offset"></a>操作符offset</h2><div class="story post-story"><p>offset的功能是取得标号的偏移地址，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">  start:mov ax,offset start			;相当于mov ax,0</span><br><span class="line">  	  s:mov ax,offset s				;相当于mov ax,3</span><br><span class="line">  	  </span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
+</div><h2 id="jmp指令"><a href="#jmp指令" class="headerlink" title="jmp指令"></a>jmp指令</h2><div class="story post-story"><p>jmp指令要给出两种信息：</p>
+<ol>
+<li>转移的目的地址</li>
+<li>转移的距离(段间转移、段内短转移、段内近转移)</li>
+</ol>
+<h3 id="依据位移进行转移的jmp指令"><a href="#依据位移进行转移的jmp指令" class="headerlink" title="依据位移进行转移的jmp指令"></a>依据位移进行转移的jmp指令</h3><p>eg：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">;示例：jmp short 标号		;转到标号处执行指令</span><br><span class="line">start: mov ax,0</span><br><span class="line">	   jmp short s</span><br><span class="line">	   add ax,1</span><br><span class="line">	s: inc ax</span><br></pre></td></tr></table></figure>
 
+<p>add ax 1这个指令由于jmp被跳过未执行，故ax中的数据为1。</p>
+<p><strong>注意：s标号在机器语言中也是立即数，表示为偏移地址(类似于c语言中的函数指针)</strong></p>
+<p>在jmp指令转换为机器语言后，机器语言只会保留jmp指令的指令号(EB)和跳转地址相对当前地址的偏移量作为标号</p>
+<p>jmp short 标号的功能为：(IP)=(IP)+8位位移</p>
+<p>8位位移=标号处地址-jmp指令后第一个字节的地址</p>
+<p>8位位移的范围是-128~127，用补码表示</p>
+<p>类似于jmp short 标号，我们还有jmp near ptr 标号，其功能为IP=(IP)+16位位移。这个指令实现了段内近转移。</p>
+<h3 id="转移的目的地址在指令中的jmp指令"><a href="#转移的目的地址在指令中的jmp指令" class="headerlink" title="转移的目的地址在指令中的jmp指令"></a>转移的目的地址在指令中的jmp指令</h3><p>上述jmp指令，其对应的机器指令是相对于当前IP的转移位移</p>
+<p>“jmp far ptr 标号“实现的是段间转移，又称为远转移：</p>
+<p>far ptr指明了指令用标号的段地址和偏移地址修改CS和IP</p>
+<p>eg:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">start:mov ax,0</span><br><span class="line">	  mov bx,0</span><br><span class="line">	  jmp far ptr s</span><br><span class="line">	  db 256 dup (0)</span><br><span class="line">	s:add ax,1</span><br><span class="line">	  inc ax</span><br></pre></td></tr></table></figure>
+
+<h3 id="转移地址在寄存器中的jmp指令"><a href="#转移地址在寄存器中的jmp指令" class="headerlink" title="转移地址在寄存器中的jmp指令"></a>转移地址在寄存器中的jmp指令</h3><p>指令格式：jmp 16位register</p>
+<h3 id="转移地址在内存中的jmp指令"><a href="#转移地址在内存中的jmp指令" class="headerlink" title="转移地址在内存中的jmp指令"></a>转移地址在内存中的jmp指令</h3><ol>
+<li>jmp word ptr 内存单元地址(段内转移)</li>
+<li>jmp dword ptr 内存单元地址(段间转移)</li>
+</ol>
+<p>第一个指令的功能是在指定内存中读一个数据作为IP的偏移地址，并执行jmp指令</p>
+<p>第二个指令的功能是在指定内存中的读取连续存放的两个字，高地址处存目的段地址，低地址存目的偏移地址，</p>
+<p>(CS) = (内存单元地址+2)</p>
+<p>(Ip) = (内存单元地址)</p>
+</div><h2 id="jcxz指令"><a href="#jcxz指令" class="headerlink" title="jcxz指令"></a>jcxz指令</h2><div class="story post-story"><p>jcxz指令为有条件转移指令，所有条件转移指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址。对IP的修改范围：-128~127</p>
+<p>指令格式：jcxz 标号</p>
+<p>当(cx)=0时，(IP)=(IP)+8位位移；当(cx)$\neq$0时，什么都不做(程序向下执行)。</p>
+<p>用c代码来翻译即是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>((cx) == <span class="number">0</span>)jmp <span class="keyword">short</span> 标号</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="loop指令"><a href="#loop指令" class="headerlink" title="loop指令"></a>loop指令</h2><div class="story post-story"><p> loop指令为循环指令，所有循环指令都是<strong>短转移</strong>，对应的机器码包含转移地址，对IP的修改范围都是：-128~127</p>
+<p>指令格式: loop 标号（(cx)=(cx)-1，如果(cx)$\neq$0，则转到标号处执行）</p>
+</div><h2 id="根据位移进行转移的意义"><a href="#根据位移进行转移的意义" class="headerlink" title="根据位移进行转移的意义"></a>根据位移进行转移的意义</h2><div class="story post-story"><p>保存位移地址的原因是：使得程序存储在内存任何位置都可以得到正确执行，否则若用绝对地址存储的话，改变指令位置则会出错。</p>
 
 </div>
   </div>
@@ -2654,10 +2713,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-19T05:23:55-07:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-20T07:26:22-07:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月19日</p>
+    <p>更新于：2021年10月20日</p>
   </a>
 </div>
 
@@ -2794,7 +2853,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">修改CS、IP的指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">内存中字的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-text">DS和[address]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%A0%88%E6%9C%BA%E5%88%B6"><span class="toc-text">CPU的栈机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%89%8D%E7%BC%80"><span class="toc-text">段前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#and-amp-or%E6%8C%87%E4%BB%A4"><span class="toc-text">and &amp; or指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bx-idata"><span class="toc-text">[bx + idata]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SI%E5%92%8CDI"><span class="toc-text">SI和DI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E9%95%BF%E5%BA%A6"><span class="toc-text">指令要处理的数据长度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AF%84%E5%AD%98%E5%99%A8%E5%90%8D%E6%8C%87%E6%98%8E%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E5%B0%BA%E5%AF%B8"><span class="toc-text">通过寄存器名指明要处理的数据尺寸</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E6%93%8D%E4%BD%9C"><span class="toc-text">字操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C"><span class="toc-text">字节操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6-X-ptr-%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">用操作符 X ptr 指明内存单元的长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#word-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E5%8D%95%E5%85%83"><span class="toc-text">word ptr指明内存单元为字单元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#byte-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83"><span class="toc-text">byte ptr指明内存单元为字节单元</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#div%E6%8C%87%E4%BB%A4"><span class="toc-text">div指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4dd"><span class="toc-text">伪指令dd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dup%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">dup操作符</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">修改CS、IP的指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">内存中字的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-text">DS和[address]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%A0%88%E6%9C%BA%E5%88%B6"><span class="toc-text">CPU的栈机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%89%8D%E7%BC%80"><span class="toc-text">段前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#and-amp-or%E6%8C%87%E4%BB%A4"><span class="toc-text">and &amp; or指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bx-idata"><span class="toc-text">[bx + idata]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SI%E5%92%8CDI"><span class="toc-text">SI和DI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E9%95%BF%E5%BA%A6"><span class="toc-text">指令要处理的数据长度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AF%84%E5%AD%98%E5%99%A8%E5%90%8D%E6%8C%87%E6%98%8E%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E5%B0%BA%E5%AF%B8"><span class="toc-text">通过寄存器名指明要处理的数据尺寸</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E6%93%8D%E4%BD%9C"><span class="toc-text">字操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C"><span class="toc-text">字节操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6-X-ptr-%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">用操作符 X ptr 指明内存单元的长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#word-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E5%8D%95%E5%85%83"><span class="toc-text">word ptr指明内存单元为字单元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#byte-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83"><span class="toc-text">byte ptr指明内存单元为字节单元</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#div%E6%8C%87%E4%BB%A4"><span class="toc-text">div指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4dd"><span class="toc-text">伪指令dd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dup%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">dup操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6offset"><span class="toc-text">操作符offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">jmp指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">依据位移进行转移的jmp指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E7%9A%84%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%9D%80%E5%9C%A8%E6%8C%87%E4%BB%A4%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">转移的目的地址在指令中的jmp指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">转移地址在寄存器中的jmp指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">转移地址在内存中的jmp指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jcxz%E6%8C%87%E4%BB%A4"><span class="toc-text">jcxz指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loop%E6%8C%87%E4%BB%A4"><span class="toc-text">loop指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">根据位移进行转移的意义</span></a></li></ol>
     </div>
   </section>
 
@@ -2960,8 +3019,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634656225913')
-      volantis.js('/js/message.js?time=1634656225913', () => {
+      volantis.css('/css/message.css?time=1634740044857')
+      volantis.js('/js/message.js?time=1634740044857', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3006,8 +3065,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634656225913')
-      volantis.js('/js/message.js?time=1634656225913', () => {
+      volantis.css('/css/message.css?time=1634740044857')
+      volantis.js('/js/message.js?time=1634740044857', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3066,8 +3125,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1634656225913')
-      volantis.js('/js/message.js?time=1634656225913', () => {
+      volantis.css('/css/message.css?time=1634740044857')
+      volantis.js('/js/message.js?time=1634740044857', () => {
         hideMessage(done);
       });
     } else {
@@ -3285,7 +3344,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1634656225913')
+    volantis.js('/js/rightMenu.js?time=1634740044857')
   </script>
 
 
@@ -3299,19 +3358,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1634656225913")
+        volantis.js("/js/plugins/sites.js?time=1634740044857")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1634656225913")
+        volantis.js("/js/plugins/friends.js?time=1634740044857")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1634656225913")
+        volantis.js("/js/plugins/contributors.js?time=1634740044857")
       }
     
   };
@@ -3412,7 +3471,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1634656225913').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1634740044857').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3421,7 +3480,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1634656225913.js"></script>
+<script src="/js/app.js?time=1634740044857.js"></script>
 
 
 <!-- optional -->
@@ -3434,7 +3493,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1634656225913");
+    return volantis.js("/js/search/hexo.js?time=1634740044857");
   }
 
   function loadSearchService() {
@@ -3501,6 +3560,60 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
+
+    <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
 
 </pjax>
 
@@ -3681,7 +3794,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/","name":"汇编语言笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"汇编语言笔记","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-19T12:23:55.293Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/","name":"汇编语言笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"汇编语言笔记","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-20T14:26:22.826Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
