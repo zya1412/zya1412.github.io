@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://yoursite.com/"/>
+  
+  <link rel="canonical" href="http://yoursite.com/2021/10/12/assembly/assembly/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635694050391" as="style">
+  <link rel="preload" href="/css/style.css?time=1635694050345" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>Zya's Blog</title>
-  <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Zya&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <title>汇编语言笔记 - Zya's Blog</title>
+  <meta name="keywords" content="汇编语言,null">
+  <meta name="description" content="寄存器通用寄存器以16位寄存器为例，我们记为AX[15:0] AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL） 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。 几条汇编指令 mov ax,18：将18送入ax寄存器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言笔记">
+<meta property="og:url" content="http://yoursite.com/2021/10/12/assembly/assembly/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
+<meta property="og:description" content="寄存器通用寄存器以16位寄存器为例，我们记为AX[15:0] AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL） 字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。 字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。 几条汇编指令 mov ax,18：将18送入ax寄存器">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-10-12T12:10:10.843Z">
+<meta property="article:modified_time" content="2021-10-21T15:29:04.152Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1655,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635694050391" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635694050391"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635694050345" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635694050345"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2077,7 +2082,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2345,7 +2350,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"></div>
 
@@ -2410,7 +2415,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2420,370 +2425,482 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/31/graphtheory/graphtheory6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zya's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/31/graphtheory/graphtheory6/"  itemprop="url">
-        图论Chap6 匹配理论
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        欧拉图基本概念定义：经过图G每条边的行迹称为欧拉迹；经过图G每条边的闭行迹称为欧拉回路，如果图G含有欧拉回路，则称G为欧拉图.
-定理：设G是连通图，则下面三个命题等价：
-
-G是欧拉图
-G的每个顶点的度数都是偶数
-G可以表示成无公共边的圈的并
-
-推论：连通图G有欧拉迹，当且仅当图G种最多有两个顶点的度数为奇数。
-定理：(上定理的有向图表示法)设D是有向图，且略去D中边的方向后，对应的无向图连通...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-31T08:26:14-07:00">2021-10-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/">-[ustc,图论] -[数学,图论]</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/" itemprop="url"><span itemprop="name">-[ustc,图论] -[数学,图论]</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/31/graphtheory/graphtheory6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/12/graphtheory/graphtheory1/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zya's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/12/graphtheory/graphtheory1/"  itemprop="url">
-        Chap5 匹配理论
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        匹配理论匹配的定义定义：设M是图G的边子集，且M的任意两条边都不相邻，则称M是G的一个匹配；M中同一条边的两个端点称为在M中相配；M中边的端点称为被M许配；若M中所有顶点都被M许配，则称M是G的完备匹配；G中边数最多的匹配称为G的最大匹配；若M是G的最大匹配，则称M中的边数|M|为G的匹配数，记作$\alpha(G)=|M|$。
-定义：设M是图G的匹配，$P=v_0e_1v_1e_2…e_k...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-12T08:32:22-07:00">2021-10-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/">-[ustc,图论] -[数学,图论]</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/" itemprop="url"><span itemprop="name">-[ustc,图论] -[数学,图论]</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/12/graphtheory/graphtheory1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/12/assembly/assembly/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Zya's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/12/assembly/assembly/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         汇编语言笔记
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    " class="lazyload" data-srcset="" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==<img itemprop="image" src="" alt="This is a picture without description" >
+    <p itemprop="name">Yuang Zhang</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="sep"></span><a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
     
-      
-        寄存器通用寄存器以16位寄存器为例，我们记为AX[15:0]
-AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL）
-字在寄存器中的存储字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。
-字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。
-几条汇编指令
-mov ax,18：将18送入ax寄...
-      
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">计算机基础</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url"><span itemprop="name">汇编语言</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-12T05:10:10-07:00">2021-10-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="sep"></span><a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">计算机基础</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url"><span itemprop="name">汇编语言</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-10-12T05:10:10-07:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年10月12日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><div class="story post-story"><p>以16位寄存器为例，我们记为AX[15:0]</p>
+<p>AX、BX、CX、DX、均可分为高八位[15:8]（AH，BH，CH，DH）和低八位[7:0]（AL、BL、CL、DL）</p>
+</div><h2 id="字在寄存器中的存储"><a href="#字在寄存器中的存储" class="headerlink" title="字在寄存器中的存储"></a>字在寄存器中的存储</h2><div class="story post-story"><p>字节：记为byte，一个字节由8bit组成，可以存在8位寄存器中。</p>
+<p>字：记为word，一个字由2字节组成，这两个字节记为高位字节和低位字节。</p>
+</div><h2 id="几条汇编指令"><a href="#几条汇编指令" class="headerlink" title="几条汇编指令"></a>几条汇编指令</h2><div class="story post-story"><ol>
+<li>mov ax,18：将18送入ax寄存器</li>
+<li>mov ah,78：将78送入ah</li>
+<li>add ax,8：将ax的值加8</li>
+<li>mox ax,bx：将bx的值送入ax</li>
+<li>add ax,bx：将ax与bx相加放入ax</li>
+</ol>
+<p><strong>注意：在执行加法运算时，视al与ah为独立的寄存器，也就是说如果单独对al进行加法运算时，在最高位产生进位则不会对ah产生影响。</strong></p>
+<p>在进行数据传输或运算时，应注意指令的两个操作对象位数应该统一，否则视为错误指令，示例如下：</p>
+<p><strong>注意：如下指令均为错误指令！！！</strong></p>
+<ol>
+<li>mov ax,bl             ;八位向十六位传输</li>
+<li>mov bh,ax           ;十六位向八位传输</li>
+<li>mov al,20000      ;超过寄存器储存限制</li>
+<li>add al,100H         ;将高于八位的数传入八位寄存器</li>
+</ol>
+</div><h2 id="8086CPU给出物理地址的方法"><a href="#8086CPU给出物理地址的方法" class="headerlink" title="8086CPU给出物理地址的方法"></a>8086CPU给出物理地址的方法</h2><div class="story post-story"><p><img src="C:\Users\Zya1412\Desktop\Assembly\A1.png" class="lazyload" data-srcset="C:\Users\Zya1412\Desktop\Assembly\A1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="A1"></p>
+<p>当8086CPU读写内存时：</p>
+<ol>
+<li>CPU中的相关部件提供两个十六位地址，一个称为段地址，另一个称为偏移地址；</li>
+<li>段地址和偏移地址通过内部总线送入地址加法器；</li>
+<li>地址加法器将两个16位地址合为20位物理地址；</li>
+<li>地址加法器通过内部总线将物理地址送入控制电路；</li>
+<li>输入输出控制电路将物理地址送入地址总线；</li>
+<li>物理地址被地址总线送入存储器</li>
+</ol>
+<p>地址加法器的合成方法：<strong>物理地址=段地址&lt;&lt;4+偏移地址</strong></p>
+<p>偏移地址为16位，16位的寻址能力位64KB，所以一个段的长度最大为64KB。</p>
+</div><h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><div class="story post-story"><p>我们介绍关于段地址的一些寄存器，段地址在8086CPU的段寄存器中存放，这四个寄存器为：CS，DS，SS，ES</p>
+<h3 id="CS-amp-IP"><a href="#CS-amp-IP" class="headerlink" title="CS&amp;IP"></a>CS&amp;IP</h3><p>CS和Ip是8086CPU中最关键的两个寄存器：CS是代码段寄存器；IP是指令指针寄存器。指令地址即CS&lt;&lt;4+IP。</p>
+<p>8086CPU的工作过程可简要描述如下：</p>
+<ol>
+<li>从CS:IP指向的内存单元读取指令，读取的指令进入指令缓存器；</li>
+<li>IP=IP+所读取的指令长度，从而指向下一条指令；</li>
+<li>执行指令。转到步骤(1),重复这个过程。</li>
+</ol>
+<h3 id="修改CS、IP的指令"><a href="#修改CS、IP的指令" class="headerlink" title="修改CS、IP的指令"></a>修改CS、IP的指令</h3><p>mov指令未提供修改CS、IP指令的功能(大概是因为这会引起混乱)</p>
+<p>但我们可以通过“jmp 段地址:偏移地址”修改CS，IP。若想仅修改IP的内容，可用“jmp 某寄存器”的形式完成，如：jmp ax这个指令形式上等价于mov IP,ax</p>
+</div><h2 id="内存中字的存储"><a href="#内存中字的存储" class="headerlink" title="内存中字的存储"></a>内存中字的存储</h2><div class="story post-story"><p>CPU中，用16位寄存器来存储一个字。高8位存放高位字节，低8位存放低位字节。由于内存单元是字节单元，所以一个字需要两个地址连续的内存单元来存放。</p>
+<p>由此我们引出字单元的概念：字单元即存放一个字形数据(16位)的内存单元，由两个地址连续的内存单元组成。</p>
+</div><h2 id="DS和-address"><a href="#DS和-address" class="headerlink" title="DS和[address]"></a>DS和[address]</h2><div class="story post-story"><p>CPU读取一个内存单元时，必须先给出这个内存单元的地址，在8086PC中，内存地址由段地址和偏移地址组成。DS寄存器通常存放要访问数据的段地址。比如要读取/写入10000H单元的内容过程可如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">;read</span><br><span class="line">mov bx,1000H</span><br><span class="line">mov ds,bx</span><br><span class="line">mov al,[0]</span><br><span class="line">;write</span><br><span class="line">mov bx,1000H</span><br><span class="line">mov ds,bx</span><br><span class="line">mov [0],cx</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：8086CPU不支持将立即数传入ds寄存器的操作，故我们需要先将地址装入另一个无关寄存器，再通过这个寄存器放入ds。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">;一些基础指令</span><br><span class="line">mov ax,bx ;将bx移入ax</span><br><span class="line">add ax,bx ;将ax与bx求和放入ax</span><br><span class="line">sub ax,bx ;将ax-bx放入ax</span><br><span class="line">;这三个指令支持的类型有三个：寄存器，存储单元，立即数</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="CPU的栈机制"><a href="#CPU的栈机制" class="headerlink" title="CPU的栈机制"></a>CPU的栈机制</h2><div class="story post-story"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push ax	;将ax的数据入栈</span><br><span class="line">pop ax	;将栈顶的数据弹出并存入ax</span><br><span class="line">;栈的操作支持数据存储类型：存储单元，寄存器</span><br></pre></td></tr></table></figure>
+
+<p>关于栈，8086CPU存在两个寄存器：段寄存器SS和寄存器SP。</p>
+<p>栈顶段地址存放在SS中，偏移地址存放在SP中。任意时刻SS:SP指向栈顶元素。push/pop指令执行时，CPU从SS和SP中得到栈顶的地址。</p>
+<p>注意到：SS:SP的机制与CS:IP的机制相同，故一个栈段的大小也为64KB。</p>
+<p>[bx]表示一个内存单元，它的偏移地址在bx中</p>
+<p>我们定义(reg)表示寄存器中的数据</p>
+<h1 id="Loop指令"><a href="#Loop指令" class="headerlink" title="Loop指令"></a>Loop指令</h1><p>loop指令的格式：loop标号，CPU执行loop指令时，要进行两部操作：</p>
+<ol>
+<li>(cx)=(cx)-1</li>
+<li>判断cx的值，不为0则转至标号处执行程序，如果为0则向下执行</li>
+</ol>
+<p>eg：计算2^12</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">	mov ax,2</span><br><span class="line">	</span><br><span class="line">	mov cx,11</span><br><span class="line">s:	add ax,ax</span><br><span class="line">	loop s</span><br><span class="line">	mov ax,4c00h</span><br><span class="line">	int 21h</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="段前缀"><a href="#段前缀" class="headerlink" title="段前缀"></a>段前缀</h2><div class="story post-story"><p>在普通的mov ax,[bx]指令中，内存单元的偏移地址由bx给出，而段地址默认在ds中。我们可以在访问内存单元的指令中显式地给出内存单元的段地址所在的段寄存器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov ax,ds:[bx]</span><br><span class="line">mov ax,cs:[bx]</span><br><span class="line">mov ax,ss:[bx]</span><br><span class="line">mov ax,es:[bx]</span><br></pre></td></tr></table></figure>
+
+<p>以上的ds,cs,es,ss均为<strong>段前缀</strong></p>
+<h1 id="更灵活的定位内存地址的方法"><a href="#更灵活的定位内存地址的方法" class="headerlink" title="更灵活的定位内存地址的方法"></a>更灵活的定位内存地址的方法</h1></div><h2 id="and-amp-or指令"><a href="#and-amp-or指令" class="headerlink" title="and &amp; or指令"></a>and &amp; or指令</h2><div class="story post-story"><p>and指令：做按位与</p>
+<p>or指令：做按位或</p>
+</div><h2 id="bx-idata"><a href="#bx-idata" class="headerlink" title="[bx + idata]"></a>[bx + idata]</h2><div class="story post-story"><p><strong>寄存器相对寻址</strong></p>
+<p>[bx + idata]表示一个内存单元，它的偏移地址为(bx)+idata(bx中的数值加idata)</p>
+<p>eg：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[200+bx]</span><br></pre></td></tr></table></figure>
+
+<p>这个命令是将((ds)*16+(bx)+200)送入ax中</p>
+<p>有了这种记录方式，就可以利用loops循环操作数组(不断改变bx来改变偏移量)</p>
+</div><h2 id="SI和DI"><a href="#SI和DI" class="headerlink" title="SI和DI"></a>SI和DI</h2><div class="story post-story"><p><strong>基址变址寻址</strong></p>
+<p>SI和DI是x86中和bx功能相似的寄存器，它们不能被分为两个8位寄存器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[200+si]</span><br><span class="line">mov ax,[s00+di]</span><br></pre></td></tr></table></figure>
+
+<p><strong>相对基址变址寻址</strong></p>
+<p>可以用bx，si，di，idata互相组合构成偏移量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[bx+idata]</span><br><span class="line">mov ax,[bx+si]</span><br><span class="line">mov ax,[bx+di]</span><br><span class="line">mov ax,[bx+si+idata]</span><br><span class="line">mov ax,[bx+di+idata]</span><br><span class="line">mov ax,[bx+si+di+idata]</span><br></pre></td></tr></table></figure>
+
+<p>可以操作二，三维数组。bp寄存器与si，di作用相同。</p>
+</div><h2 id="指令要处理的数据长度"><a href="#指令要处理的数据长度" class="headerlink" title="指令要处理的数据长度"></a>指令要处理的数据长度</h2><div class="story post-story"><h3 id="通过寄存器名指明要处理的数据尺寸"><a href="#通过寄存器名指明要处理的数据尺寸" class="headerlink" title="通过寄存器名指明要处理的数据尺寸"></a>通过寄存器名指明要处理的数据尺寸</h3><h4 id="字操作"><a href="#字操作" class="headerlink" title="字操作"></a>字操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov ax,1</span><br><span class="line">mov bx,ds:[0]</span><br><span class="line">inc ax</span><br><span class="line">add ax,1000</span><br></pre></td></tr></table></figure>
+
+<h4 id="字节操作"><a href="#字节操作" class="headerlink" title="字节操作"></a>字节操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mov al,1</span><br><span class="line">mov al,bl</span><br><span class="line">mov al,ds:[0]</span><br><span class="line">inc al</span><br><span class="line">add al,100</span><br></pre></td></tr></table></figure>
+
+<h3 id="用操作符-X-ptr-指明内存单元的长度"><a href="#用操作符-X-ptr-指明内存单元的长度" class="headerlink" title="用操作符 X ptr 指明内存单元的长度"></a>用操作符 X ptr 指明内存单元的长度</h3><p>X可以为word或byte</p>
+<h4 id="word-ptr指明内存单元为字单元"><a href="#word-ptr指明内存单元为字单元" class="headerlink" title="word ptr指明内存单元为字单元"></a>word ptr指明内存单元为字单元</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br><span class="line">inc word ptr [bx]</span><br><span class="line">add word ptr [bx],2</span><br></pre></td></tr></table></figure>
+
+<h4 id="byte-ptr指明内存单元为字节单元"><a href="#byte-ptr指明内存单元为字节单元" class="headerlink" title="byte ptr指明内存单元为字节单元"></a>byte ptr指明内存单元为字节单元</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov byte ptr ds:[0],1</span><br><span class="line">inc byte ptr [bx]</span><br><span class="line">add byte ptr [bx],2</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="div指令"><a href="#div指令" class="headerlink" title="div指令"></a>div指令</h2><div class="story post-story"><p>div为除法指令：</p>
+<ol>
+<li><p>除数：有8位或16位两种，在一个reg或内存单元中。</p>
+</li>
+<li><p>被除数：默认放在ax/dx&amp;ax中，若除数8位，被除数则为16位，默认在ax中存放；若除数为16位，被除数则为32位，在dx和ax中存放，dx放高16位，ax放低16位。</p>
+</li>
+<li><p>结果：如果除数为8位，则al存储除法操作的商，ah放余数；若除数为16位，则ax存储商，dx存储余数。</p>
+</li>
+</ol>
+<p>格式如下：</p>
+<p>div reg</p>
+<p>div 内存单元</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div byte ptr ds:[0]</span><br><span class="line">div word ptr es:[0]</span><br><span class="line">div word ptr [bx+si+8]</span><br><span class="line">div byte ptr [bx+si+8]</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="伪指令dd"><a href="#伪指令dd" class="headerlink" title="伪指令dd"></a>伪指令dd</h2><div class="story post-story"><p>db为字节型数据，dw为字型数据，dd为double型数据(32位)</p>
+</div><h2 id="dup操作符"><a href="#dup操作符" class="headerlink" title="dup操作符"></a>dup操作符</h2><div class="story post-story"><p>dup用来与dw，db，dd等数据定义伪指令配合使用的，用来进行数据的重复：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db 3 dup (0)				;等价于db 0,0,0</span><br><span class="line">db 3 dup (0,1,2)			;等价于db 0,1,2,0,1,2,0,1,2</span><br><span class="line">db 3 dup (&#x27;abc&#x27;,&#x27;ABC&#x27;)		;等价于db‘abcABCabcABCabcABC&#x27;</span><br></pre></td></tr></table></figure>
+
+<h1 id="转移指令"><a href="#转移指令" class="headerlink" title="转移指令"></a>转移指令</h1><p>可以修改IP，或同时修改CS和IP的指令称为转移指令；概括的说，转移指令就是可以控制CPU执行内存中某处代码的指令。</p>
+<p>x86中转移有以下几类：</p>
+<ol>
+<li>只修改IP时，称为段内转移，比如jmp ax</li>
+<li>同时修改CS和IP时，称为段间转移，比如jmp 1000：0</li>
+</ol>
+<p>由于转移指令对IP的修改范围不同，段内转移又分为：短转移和近转移。</p>
+<ol>
+<li>短转移的IP修改范围为-128~127</li>
+<li>近转移的IP修改范围为-32768~32767</li>
+</ol>
+<p>x86的转移指令分为以下几类：</p>
+<ol>
+<li>无条件转移指令</li>
+<li>条件转移指令</li>
+<li>循环指令</li>
+<li>过程</li>
+<li>中断</li>
+</ol>
+</div><h2 id="操作符offset"><a href="#操作符offset" class="headerlink" title="操作符offset"></a>操作符offset</h2><div class="story post-story"><p>offset的功能是取得标号的偏移地址，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">  start:mov ax,offset start			;相当于mov ax,0</span><br><span class="line">  	  s:mov ax,offset s				;相当于mov ax,3</span><br><span class="line">  	  </span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="jmp指令"><a href="#jmp指令" class="headerlink" title="jmp指令"></a>jmp指令</h2><div class="story post-story"><p>jmp指令要给出两种信息：</p>
+<ol>
+<li>转移的目的地址</li>
+<li>转移的距离(段间转移、段内短转移、段内近转移)</li>
+</ol>
+<h3 id="依据位移进行转移的jmp指令"><a href="#依据位移进行转移的jmp指令" class="headerlink" title="依据位移进行转移的jmp指令"></a>依据位移进行转移的jmp指令</h3><p>eg：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">;示例：jmp short 标号		;转到标号处执行指令</span><br><span class="line">start: mov ax,0</span><br><span class="line">	   jmp short s</span><br><span class="line">	   add ax,1</span><br><span class="line">	s: inc ax</span><br></pre></td></tr></table></figure>
+
+<p>add ax 1这个指令由于jmp被跳过未执行，故ax中的数据为1。</p>
+<p><strong>注意：s标号在机器语言中也是立即数，表示为偏移地址(类似于c语言中的函数指针)</strong></p>
+<p>在jmp指令转换为机器语言后，机器语言只会保留jmp指令的指令号(EB)和跳转地址相对当前地址的偏移量作为标号</p>
+<p>jmp short 标号的功能为：(IP)=(IP)+8位位移</p>
+<p>8位位移=标号处地址-jmp指令后第一个字节的地址</p>
+<p>8位位移的范围是-128~127，用补码表示</p>
+<p>类似于jmp short 标号，我们还有jmp near ptr 标号，其功能为IP=(IP)+16位位移。这个指令实现了段内近转移。</p>
+<h3 id="转移的目的地址在指令中的jmp指令"><a href="#转移的目的地址在指令中的jmp指令" class="headerlink" title="转移的目的地址在指令中的jmp指令"></a>转移的目的地址在指令中的jmp指令</h3><p>上述jmp指令，其对应的机器指令是相对于当前IP的转移位移</p>
+<p>“jmp far ptr 标号“实现的是段间转移，又称为远转移：</p>
+<p>far ptr指明了指令用标号的段地址和偏移地址修改CS和IP</p>
+<p>eg:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">start:mov ax,0</span><br><span class="line">	  mov bx,0</span><br><span class="line">	  jmp far ptr s</span><br><span class="line">	  db 256 dup (0)</span><br><span class="line">	s:add ax,1</span><br><span class="line">	  inc ax</span><br></pre></td></tr></table></figure>
+
+<h3 id="转移地址在寄存器中的jmp指令"><a href="#转移地址在寄存器中的jmp指令" class="headerlink" title="转移地址在寄存器中的jmp指令"></a>转移地址在寄存器中的jmp指令</h3><p>指令格式：jmp 16位register</p>
+<h3 id="转移地址在内存中的jmp指令"><a href="#转移地址在内存中的jmp指令" class="headerlink" title="转移地址在内存中的jmp指令"></a>转移地址在内存中的jmp指令</h3><ol>
+<li>jmp word ptr 内存单元地址(段内转移)</li>
+<li>jmp dword ptr 内存单元地址(段间转移)</li>
+</ol>
+<p>第一个指令的功能是在指定内存中读一个数据作为IP的偏移地址，并执行jmp指令</p>
+<p>第二个指令的功能是在指定内存中的读取连续存放的两个字，高地址处存目的段地址，低地址存目的偏移地址，</p>
+<p>(CS) = (内存单元地址+2)</p>
+<p>(Ip) = (内存单元地址)</p>
+</div><h2 id="jcxz指令"><a href="#jcxz指令" class="headerlink" title="jcxz指令"></a>jcxz指令</h2><div class="story post-story"><p>jcxz指令为有条件转移指令，所有条件转移指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址。对IP的修改范围：-128~127</p>
+<p>指令格式：jcxz 标号</p>
+<p>当(cx)=0时，(IP)=(IP)+8位位移；当(cx)$\neq$0时，什么都不做(程序向下执行)。</p>
+<p>用c代码来翻译即是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>((cx) == <span class="number">0</span>)jmp <span class="keyword">short</span> 标号</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="loop指令"><a href="#loop指令" class="headerlink" title="loop指令"></a>loop指令</h2><div class="story post-story"><p> loop指令为循环指令，所有循环指令都是<strong>短转移</strong>，对应的机器码包含转移地址，对IP的修改范围都是：-128~127</p>
+<p>指令格式: loop 标号（(cx)=(cx)-1，如果(cx)$\neq$0，则转到标号处执行）</p>
+</div><h2 id="根据位移进行转移的意义"><a href="#根据位移进行转移的意义" class="headerlink" title="根据位移进行转移的意义"></a>根据位移进行转移的意义</h2><div class="story post-story"><p>保存位移地址的原因是：使得程序存储在内存任何位置都可以得到正确执行，否则若用绝对地址存储的话，改变指令位置则会出错。</p>
+</div><h2 id="CALL和RET指令"><a href="#CALL和RET指令" class="headerlink" title="CALL和RET指令"></a>CALL和RET指令</h2><div class="story post-story"><h3 id="ret和retf"><a href="#ret和retf" class="headerlink" title="ret和retf"></a>ret和retf</h3><p>ret指令用栈中的数据，修改IP的内容，从而实现近转移；</p>
+<p>retf指令用栈中的数据，修改CS和IP的内容，从而实现远转移。</p>
+<p>执行ret指令进行如下操作：</p>
+<ol>
+<li>(IP)=((ss)*16+(sp))</li>
+<li>(sp)=(sp)+2</li>
+</ol>
+<p>执行retf指令进行如下操作：</p>
+<ol>
+<li>(IP)=((ss)*16+(sp))</li>
+<li>(sp)=(sp)+2</li>
+<li>(cs)=((ss)*16+(sp))</li>
+<li>(sp)=(sp)+2</li>
+</ol>
+<h3 id="call指令"><a href="#call指令" class="headerlink" title="call指令"></a>call指令</h3><p>执行call指令时进行两步操作：</p>
+<ol>
+<li>将当前的IP或CS和IP压入栈中</li>
+<li>转移</li>
+</ol>
+<p><strong>call指令不能实现短转移，除此之外，call指令实现转移的方法和jmp指令的原理相同</strong></p>
+<h4 id="依据位移进行转移的call指令"><a href="#依据位移进行转移的call指令" class="headerlink" title="依据位移进行转移的call指令"></a>依据位移进行转移的call指令</h4><p>call指令的格式：    call 标号(将当前的IP压栈后，转到标号处执行指令)</p>
+<p>执行call指令时，具体操作为：</p>
+<ol>
+<li><p>(sp)=(sp)-2</p>
+<p>((ss)*16+(sp))=(IP)</p>
+</li>
+<li><p>(IP)=(IP)+16位位移</p>
+</li>
+</ol>
+<p>call 标号指令等价于：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp near ptr 标号</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="转移的目的地址在指令中的call指令"><a href="#转移的目的地址在指令中的call指令" class="headerlink" title="转移的目的地址在指令中的call指令"></a>转移的目的地址在指令中的call指令</h4><p>前面讲的call指令，其对应的机器指令中并没有转移的目的地址，而是相对于当前IP的转移位移。</p>
+<p>“call far ptr 标号”实现的是段间转移。</p>
+<p>执行此种格式的call指令时，进行如下操作：</p>
+<ol>
+<li><p>(sp)=(sp)-2</p>
+<p>(cs)=((ss)*16+(sp))</p>
+<p>(sp)=(sp)-2</p>
+<p>(ip)=((ss)*16+(sp))</p>
+</li>
+<li><p>(cs)=标号所在段的段地址</p>
+<p>(IP)=标号在段中的偏移地址</p>
+</li>
+</ol>
+<p>call far ptr 标号等价于:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push CS</span><br><span class="line">push IP</span><br><span class="line">jmp far ptr 标号</span><br></pre></td></tr></table></figure>
+
+<h4 id="转移地址在寄存器中的call指令"><a href="#转移地址在寄存器中的call指令" class="headerlink" title="转移地址在寄存器中的call指令"></a>转移地址在寄存器中的call指令</h4><p>指令格式：call 16bits register</p>
+<p>功能：</p>
+<p>(sp)=(sp)-2</p>
+<p>(IP)=((ss)*16+(sp))</p>
+<p>(IP)=(16位register)</p>
+<p>此种指令等价于：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp 16位reg</span><br></pre></td></tr></table></figure>
+
+<h4 id="转移地址在内存中的call指令"><a href="#转移地址在内存中的call指令" class="headerlink" title="转移地址在内存中的call指令"></a>转移地址在内存中的call指令</h4><p>转移地址在内存中的call指令有两种格式。</p>
+<p>(1) call word ptr 内存单元地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp word ptr 内存单元地址</span><br></pre></td></tr></table></figure>
+
+<p>(2) call dword ptr 内存单元地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push CS</span><br><span class="line">push IP</span><br><span class="line">jmp dword ptr 内存单元地址</span><br></pre></td></tr></table></figure>
+
+<h3 id="mul指令"><a href="#mul指令" class="headerlink" title="mul指令"></a>mul指令</h3><ol>
+<li>两个相乘的数：两个相乘的数，要么都是8位，要么都是16位。如果是8位，一个默认放在AL中，另一个放在8位reg或内存单元字节单元中；如果是16位，一个默认在ax中，；ing一个放在16位reg或内存单元字节中。</li>
+<li>结果：如果是八位，结果默认放在ax中；如果是16位，高位默认在dx中存放，低位在ax中存放。</li>
+</ol>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/10/12/assembly/assembly/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2021/10/12/assembly/assembly/>http://yoursite.com/2021/10/12/assembly/assembly/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-21T08:29:04-07:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年10月21日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/09/Toddler's%20Bottle/pwn1/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zya's Blog">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>汇编语言</p></a></div>
+  <span hidden itemprop="keywords">汇编语言</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/10/12/assembly/assembly/&title=汇编语言笔记 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/10/12/assembly/assembly/&title=汇编语言笔记 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/10/12/assembly/assembly/&title=汇编语言笔记 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/10/12/graphtheory/graphtheory1/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Chap5 匹配理论</p>
+          <p class='content'>匹配理论匹配的定义定义：设M是图G的边子集，且M的任意两条边都不相邻，则称M是G的一个匹配；M中同一条边的两个端点称为在M中相配；M中边的端点称为被M许配；若M中所有顶点都被M许配，则称M是G的...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/10/09/Toddler's%20Bottle/pwn1/'>
+          <p class='title'>Toddler 's Bottle Write Up题解<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>fd1234567891011121314151617181920212223// fd.#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#in...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2021/10/12/assembly/assembly/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/09/Toddler's%20Bottle/pwn1/"  itemprop="url">
-        Toddler 's Bottle Write Up题解
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        fd1234567891011121314151617181920212223// fd.#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;char buf[32];int main(int argc, char* argv[], char* envp[])&#123;	if(argc&lt;2...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-09T06:45:48-07:00">2021-10-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ctf/">ctf</a><span class="sep"></span><a class="category-link" href="/categories/ctf/pwn/">pwn</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ctf/" itemprop="url"><span itemprop="name">ctf</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ctf/pwn/" itemprop="url"><span itemprop="name">pwn</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/09/Toddler's%20Bottle/pwn1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/07/RealAnalysis1/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zya's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/07/RealAnalysis1/"  itemprop="url">
-        实变函数第一章
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        集合与点集定义：设${A_k}$是一个集合列，若$A_1 \subset A_2 \subset … \subset A_k \subset …$​则称此集合列为递减集合列。称$\bigcap_{k = j}^{\infty}A_k$为{$A_k}的极限集。记为
-$\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集为并集）。
-定义：设${A_k}$​...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-07T06:49:15-07:00">2021-10-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/">实变函数</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/" itemprop="url"><span itemprop="name">实变函数</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/07/RealAnalysis1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
 </div>
@@ -2793,156 +2910,34 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Zya's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/ctf/" href="/categories/ctf/"
-            active-action="action-categoriesctf"
-            ><div class='name'>ctf</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/ctf/pwn/" href="/categories/ctf/pwn/"
-            active-action="action-categoriesctfpwn"
-            ><div class='name'>pwn</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/" href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/"
-            active-action="action-categoriesustc-E59BBEE8AEBA-E695B0E5ADA6-E59BBEE8AEBA"
-            ><div class='name'>-[ustc,图论] -[数学,图论]</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/" href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/"
-            active-action="action-categoriesE695B0E5ADA6E5AE9EE58F98E587BDE695B0"
-            ><div class='name'>实变函数</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180"
-            ><div class='name'>计算机基础</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180E6B187E7BC96E8AFADE8A880"
-            ><div class='name'>汇编语言</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">字在寄存器中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-text">几条汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">8086CPU给出物理地址的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">段寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CS-amp-IP"><span class="toc-text">CS&amp;IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">修改CS、IP的指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%97%E7%9A%84%E5%AD%98%E5%82%A8"><span class="toc-text">内存中字的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DS%E5%92%8C-address"><span class="toc-text">DS和[address]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%A0%88%E6%9C%BA%E5%88%B6"><span class="toc-text">CPU的栈机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E5%89%8D%E7%BC%80"><span class="toc-text">段前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#and-amp-or%E6%8C%87%E4%BB%A4"><span class="toc-text">and &amp; or指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bx-idata"><span class="toc-text">[bx + idata]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SI%E5%92%8CDI"><span class="toc-text">SI和DI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E9%95%BF%E5%BA%A6"><span class="toc-text">指令要处理的数据长度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AF%84%E5%AD%98%E5%99%A8%E5%90%8D%E6%8C%87%E6%98%8E%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E5%B0%BA%E5%AF%B8"><span class="toc-text">通过寄存器名指明要处理的数据尺寸</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E6%93%8D%E4%BD%9C"><span class="toc-text">字操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%93%8D%E4%BD%9C"><span class="toc-text">字节操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6-X-ptr-%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">用操作符 X ptr 指明内存单元的长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#word-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E5%8D%95%E5%85%83"><span class="toc-text">word ptr指明内存单元为字单元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#byte-ptr%E6%8C%87%E6%98%8E%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E4%B8%BA%E5%AD%97%E8%8A%82%E5%8D%95%E5%85%83"><span class="toc-text">byte ptr指明内存单元为字节单元</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#div%E6%8C%87%E4%BB%A4"><span class="toc-text">div指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4dd"><span class="toc-text">伪指令dd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dup%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">dup操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6offset"><span class="toc-text">操作符offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">jmp指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">依据位移进行转移的jmp指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E7%9A%84%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%9D%80%E5%9C%A8%E6%8C%87%E4%BB%A4%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">转移的目的地址在指令中的jmp指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">转移地址在寄存器中的jmp指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84jmp%E6%8C%87%E4%BB%A4"><span class="toc-text">转移地址在内存中的jmp指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jcxz%E6%8C%87%E4%BB%A4"><span class="toc-text">jcxz指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loop%E6%8C%87%E4%BB%A4"><span class="toc-text">loop指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">根据位移进行转移的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CALL%E5%92%8CRET%E6%8C%87%E4%BB%A4"><span class="toc-text">CALL和RET指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ret%E5%92%8Cretf"><span class="toc-text">ret和retf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#call%E6%8C%87%E4%BB%A4"><span class="toc-text">call指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84call%E6%8C%87%E4%BB%A4"><span class="toc-text">依据位移进行转移的call指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E7%9A%84%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%9D%80%E5%9C%A8%E6%8C%87%E4%BB%A4%E4%B8%AD%E7%9A%84call%E6%8C%87%E4%BB%A4"><span class="toc-text">转移的目的地址在指令中的call指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84call%E6%8C%87%E4%BB%A4"><span class="toc-text">转移地址在寄存器中的call指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%9C%B0%E5%9D%80%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84call%E6%8C%87%E4%BB%A4"><span class="toc-text">转移地址在内存中的call指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mul%E6%8C%87%E4%BB%A4"><span class="toc-text">mul指令</span></a></li></ol></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/pwn/" style="font-size: 14px; color: #999">pwn</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">汇编语言</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2978,8 +2973,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="汇编语言笔记";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2988,15 +2983,15 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -3093,8 +3088,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635694050391')
-      volantis.js('/js/message.js?time=1635694050391', () => {
+      volantis.css('/css/message.css?time=1635694050345')
+      volantis.js('/js/message.js?time=1635694050345', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3139,8 +3134,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635694050391')
-      volantis.js('/js/message.js?time=1635694050391', () => {
+      volantis.css('/css/message.css?time=1635694050345')
+      volantis.js('/js/message.js?time=1635694050345', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3199,8 +3194,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635694050391')
-      volantis.js('/js/message.js?time=1635694050391', () => {
+      volantis.css('/css/message.css?time=1635694050345')
+      volantis.js('/js/message.js?time=1635694050345', () => {
         hideMessage(done);
       });
     } else {
@@ -3418,7 +3413,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635694050391')
+    volantis.js('/js/rightMenu.js?time=1635694050345')
   </script>
 
 
@@ -3432,19 +3427,19 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635694050391")
+        volantis.js("/js/plugins/sites.js?time=1635694050345")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635694050391")
+        volantis.js("/js/plugins/friends.js?time=1635694050345")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635694050391")
+        volantis.js("/js/plugins/contributors.js?time=1635694050345")
       }
     
   };
@@ -3545,7 +3540,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1635694050391').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1635694050345').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3554,7 +3549,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
 
 
-<script src="/js/app.js?time=1635694050391.js"></script>
+<script src="/js/app.js?time=1635694050345.js"></script>
 
 
 <!-- optional -->
@@ -3567,7 +3562,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1635694050391");
+    return volantis.js("/js/search/hexo.js?time=1635694050345");
   }
 
   function loadSearchService() {
@@ -3634,6 +3629,60 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
+
+    <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
 
 </pjax>
 
@@ -3814,7 +3863,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Zya's Blog","url":"http://yoursite.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":""},"publisher":{"@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/汇编语言/","name":"汇编语言"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/10/12/assembly/assembly/","name":"汇编语言笔记"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"汇编语言笔记","description":"","datePublished":"2021-10-12T12:10:10.843Z","dateModified":"2021-10-21T15:29:04.152Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/10/12/assembly/assembly/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/10/12/assembly/assembly/","wordCount":0,"articleSection":"计算机基础","keywords":"汇编语言","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
