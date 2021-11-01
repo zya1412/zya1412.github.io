@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>图论Chap7 图的着色</title>
+      <link href="/2021/11/01/graphtheory/graphtheory7/"/>
+      <url>/2021/11/01/graphtheory/graphtheory7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="顶点着色"><a href="#顶点着色" class="headerlink" title="顶点着色"></a>顶点着色</h1><p><strong>定义：</strong>图G的一个<strong>k-顶点着色</strong>是指把k种颜色分配给图G的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个<strong>正常k-顶点着色</strong>，若图G有一个正常k-顶点着色时，称G是可<strong>k-顶点着色的</strong>.图G的<strong>顶点色数</strong>指的是图G可正常着色的最少色数k，简称色数，记为$ \chi(G)$.</p><p>顶点着色的性质：</p><ol><li>$v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) = 1$当且仅当G是零图(无边)；$\chi(G) = v$当且仅当G是$v$阶完全图.</li><li>$\chi(G) = 2$当且仅当G是有边二分图</li><li>$\chi(C_v) = 2 (v \equiv 0 (mod2))且 \chi(C_v) = 3 (v \equiv 1 (mod2))$​</li><li>若图H是G的子图，则$\chi(H) \leq chi(G)$</li></ol><p><strong>定理：</strong>对任何图G，$\chi(G) \leq \bigtriangleup(G) + 1$.</p><p><strong>定理(Brooks)：</strong>设$v(v \geq 3)$阶连通图G不是完全图也不是奇圈，则$\chi(G) \leq \bigtriangleup(G)$.</p><h1 id="边着色"><a href="#边着色" class="headerlink" title="边着色"></a>边着色</h1><p><strong>定义：</strong>图G的一个<strong>k-边着色</strong>是指把k种颜色分配给图G的边，使每条边都分配一种颜色；若相邻边颜色不同，则称这种着色是一个<strong>正常k-边着色</strong>，若图G有一个正常k-边着色时，称G是可<strong>k-边着色的</strong>.图G的<strong>边色数</strong>指的是图G可正常着色的最少色数k，记为$ \chi^{‘}(G)$​​​.</p><p><strong>引理：</strong>若连通图G不是奇圈，则存在一种2-边着色，使得所用的两种颜色在每个度数大于等于2的顶点处都出现.</p><p>给定图G的k-边着色$C$，用$c(v)$表示顶点v关联的边中出现的颜色数，显然$c(v) \leq deg(v)$​.C是正常k-边着色，当且仅当等号对G中所有顶点v均成立</p><p><strong>定义：</strong>设$C$​和$C^{’}$​是图G的两种k-边着色，如果$\sum_{u \in V( G)}c^{‘}(v) \geq \sum_{u \in V( G)}c(v)$​​​，则称k-边着色$C^{‘}$是对$C$的一个<strong>改进</strong>，不能再改进的k-边着色称为最佳-k边着色</p><p><strong>引理：</strong>设$C = (E_1,E_2,…,E_k)$​是图G的一个最佳k-边着色，如果存在一个顶点$v_0$和两种颜色i，j，使得i色不在$v_0$关联的边中出现，但j色在$v_0$关联的边中至少出现两次，则边导出子图$G[E_i \cup E_j]$中含$v_0$的连通片是一个奇圈.</p><p><strong>定理：</strong>若G是二分图，则$ \chi^{‘}(G) = \bigtriangleup(G)$.</p><p><strong>定理(Vizing)：</strong>若G是简单图，则$ \chi^{‘}(G) = \bigtriangleup(G)或 \chi^{‘}(G) = \bigtriangleup(G)  +1$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -[ustc,图论] -[数学,图论] </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图论Chap6 匹配理论</title>
       <link href="/2021/10/31/graphtheory/graphtheory6/"/>
       <url>/2021/10/31/graphtheory/graphtheory6/</url>
@@ -29,7 +54,7 @@
     
     
     <entry>
-      <title>Chap5 匹配理论</title>
+      <title>图论Chap5 匹配理论</title>
       <link href="/2021/10/12/graphtheory/graphtheory1/"/>
       <url>/2021/10/12/graphtheory/graphtheory1/</url>
       
