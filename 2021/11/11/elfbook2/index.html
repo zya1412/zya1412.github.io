@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://yoursite.com/categories/数学/"/>
+  
+  <link rel="canonical" href="http://yoursite.com/2021/11/11/elfbook2/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,19 +20,23 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1636697911042" as="style">
+  <link rel="preload" href="/css/style.css?time=1636697911001" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>分类：数学 - Zya's Blog</title>
+  <title>程序员的自我修养Chap2：静态链接 - Zya's Blog</title>
   <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Zya&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/%E6%95%B0%E5%AD%A6/index.html">
+  <meta name="description" content="编译和链接一个c程序编译需要四个过程：预处理(Prepressing)，编译(Compilation)，汇编(Assembly)和链接(Linking). 以下我们以gcc编译命令为例 预编译第一步预编译的过程相当于如下指令： 1$gcc -E hello.c -o hello.i  预编译过程主要处理哪些源代码中的以#开始的预编译指令，如#define,#include,#ifdef等，主要规则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员的自我修养Chap2：静态链接">
+<meta property="og:url" content="http://yoursite.com/2021/11/11/elfbook2/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
+<meta property="og:description" content="编译和链接一个c程序编译需要四个过程：预处理(Prepressing)，编译(Compilation)，汇编(Assembly)和链接(Linking). 以下我们以gcc编译命令为例 预编译第一步预编译的过程相当于如下指令： 1$gcc -E hello.c -o hello.i  预编译过程主要处理哪些源代码中的以#开始的预编译指令，如#define,#include,#ifdef等，主要规则">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-11-12T06:13:32.274Z">
+<meta property="article:modified_time" content="2021-11-12T06:17:58.005Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1655,8 +1659,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1636697911042" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1636697911042"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1636697911001" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1636697911001"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2345,7 +2349,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"></div>
 
@@ -2419,95 +2423,294 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/07/RealAnalysis1/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/11/elfbook2/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Zya's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/07/RealAnalysis1/"  itemprop="url">
-        实变函数第一章
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        集合与点集定义：设${A_k}$是一个集合列，若$A_1 \subset A_2 \subset … \subset A_k \subset …$​则称此集合列为递减集合列。称$\bigcap_{k = j}^{\infty}A_k$为{$A_k}的极限集。记为
-$\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集为并集）。
-定义：设${A_k}$​...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        程序员的自我修养Chap2：静态链接
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    " class="lazyload" data-srcset="" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==<img itemprop="image" src="" alt="This is a picture without description" >
+    <p itemprop="name">Yuang Zhang</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="sep"></span><a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/">程序员的自我修养</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">计算机基础</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/" itemprop="url"><span itemprop="name">程序员的自我修养</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-07T06:49:15-07:00">2021-10-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/">实变函数</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/" itemprop="url"><span itemprop="name">实变函数</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-11T22:13:32-08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年11月11日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h2><div class="story post-story"><p>一个c程序编译需要四个过程：<strong>预处理(Prepressing)，编译(Compilation)，汇编(Assembly)和链接(Linking)</strong>.</p>
+<p>以下我们以gcc编译命令为例</p>
+<h3 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h3><p>第一步预编译的过程相当于如下指令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">gcc -E hello.c -o hello.i</span></span><br></pre></td></tr></table></figure>
+
+<p>预编译过程主要处理哪些源代码中的以#开始的预编译指令，如#define,#include,#ifdef等，主要规则如下：</p>
+<ol>
+<li>将所有的#define删除，并且展开所有宏定义</li>
+<li>处理所有条件预编译指令，如#if，#ifdef，#elif，#else，#endif</li>
+<li>处理#include预编译指令，将被包含文件插入到该预编译指令的位置，需要注意的是这个过程是递归执行的，也就是说被包含的文件可能还包含其他文件</li>
+<li>删除所有注释</li>
+<li>添加行号和文件名标识，以便于编译时编译器产生调试用的行号信息及用于编译时产生的编译错误或警告能显示行号</li>
+<li>保留所有的#pragma编译器指令，因为编译器要使用</li>
+</ol>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">gcc -S hello.i -o hello.s</span></span><br></pre></td></tr></table></figure>
+
+<p>编译过程就是把预处理完的文件进行一系列词法分析，语法分析，语义分析及优化后生成相应的汇编代码文件，这个过程往往是我们所说的整个程序构建的核心部分，也是最复杂的部分之一。我们将在下节简单介绍编译的具体几个步骤。</p>
+<h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><p>汇编器是将汇编代码转变成机器可执行的指令，每个汇编语句几乎都对应一条机器指令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">gcc -c hello.s -o hello.o</span></span><br></pre></td></tr></table></figure>
+
+<p>或调用汇编器as完成：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">as hello.s -o hello.o</span></span><br></pre></td></tr></table></figure>
+
+<p>或者使用gcc直接经历前三个过程直接输出目标文件(Object file):</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">gcc -c hello.c -o hello.o</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>链接通常是比较令人费解的过程，为什么汇编器不直接输出可执行文件而是输出一个目标文件呢？链接过程包含了什么？为什么要链接？</p>
+<p>下面我们来进行分析:)</p>
+</div><h2 id="编译器做了什么"><a href="#编译器做了什么" class="headerlink" title="编译器做了什么"></a>编译器做了什么</h2><div class="story post-story"><p>最直观的角度来说，编译器是将高级语言翻译成机器语言的工具。</p>
+<p>编译过程一般分为6步：扫描、词法分析、语义分析、源代码优化、代码生成和目标代码优化</p>
+<p>以一段简单的C代码为例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span>[index] = (index + <span class="number">4</span>) * (<span class="number">2</span> + <span class="number">6</span>);</span><br><span class="line"><span class="comment">//CompilerExpression.c</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h3><p>源代码程序首先被输入到<strong>扫描器(Scanner)</strong> 中，扫描器的任务很简单，它只是简单的进行词法分析，运用一种类似于<strong>有限状态机</strong> 的算法可以很轻松地将源代码的字符序列分割成一系列<strong>记号</strong> 。</p>
+<p>词法分析产生的记号一般可分为如下几类：关键字、标识符、字面量(包含数字、字符串等)和特殊记号(如加号、等号)。在识别记号的同时，扫描器也完成了其他工作。比如将标识符存放到符号表，将数字、字符串常量存放到文字表等，以备后续使用</p>
+<p>对于一些有预处理的语言(比如C)，它的宏替换和文件包含等工作一般不归入编译器的范围而交给一个独立的预处理器</p>
+<h3 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h3><p>接下来<strong>语法分析器(Grammar Parser)</strong> 将对由扫描器产生的记号进行语法分析。从而产生<strong>语法树(Syntax Tree)</strong> 。整个分析过程采用了<strong>上下文无关语法(Context-free Grammer)</strong> 的分析手段。</p>
+<h3 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h3><p>接下来的语义分析由<strong>语义分析器(Semantic Analyzer)</strong> 完成。语法分析仅仅是完成了对表达式语法层面的分析，但它并不了解这个语句是否真正有意义。扁你一起所能分析的语义是<strong>静态语义(Static Semantic)</strong> ，所谓静态语义是指在编译期可以确定的语义，与之相对的是<strong>动态语义(Dynamic Semantic)</strong> 就是只有在运行期才能确定的语义.</p>
+<p>静态语义通常包括声明和类型的匹配，类型的转换。比如当一个浮点型表达式赋给一个整型的表达式时，其中隐含了一个浮点型到整型转换的过程，语义分析过程中需要完成这个步骤。比如将一个浮点型赋值给一个指针的时候，语义分析程序会发现类型不匹配，编译器将会报错。动态语义一般是指在运行期出现的语义相关的问题，比如将0作为除数是一个运行期语义错误。</p>
+<h3 id="中间语言生成"><a href="#中间语言生成" class="headerlink" title="中间语言生成"></a>中间语言生成</h3><p>现代编译器有很多层次的优化，往往在源代码级别会有一个优化过程。我们这里描述的<strong>源码级优化器(Source Code Optimizer)</strong> 在不同编译器中可能会有不同的定义或有一些其他的差异。源码级优化器会在源代码级别进行优化。(例如(2 + 6)这个表达式就可以优化掉，因为它的值在编译时就可以确定)。</p>
+<p>其实直接在语法树上做优化比较困难，所以源代码优化器往往将整个语法树转换成<strong>中间代码(Intermediate Code)</strong> ，它是语法树的顺序表示，其实它已经非常接近目标代码了。但是它一般跟目标机器和运行时环境是无关的，比如它不包含数据的尺寸、变量地址和寄存器名字等。中间代码有很多种类型，在不同编译器中有着不同的形式，比较常见的有：<strong>三地址码(Three-address Code)和P-代码(P-Code)</strong></p>
+<p>以三地址码为例，最基本的三地址码是这样的：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = y op z		<span class="comment">//op is a opreator</span></span><br></pre></td></tr></table></figure>
+
+<p>eg:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//优化前</span></span><br><span class="line">t1 = <span class="number">2</span> + <span class="number">6</span>;</span><br><span class="line">t2 = index * <span class="number">4</span>;</span><br><span class="line">t3 = t2 * t1;</span><br><span class="line"><span class="built_in">array</span>[index] = t3;</span><br><span class="line"></span><br><span class="line"><span class="comment">//优化后</span></span><br><span class="line">t2 = index + <span class="number">4</span>;</span><br><span class="line">t2 = t2 * <span class="number">8</span>;</span><br><span class="line"><span class="built_in">array</span>[index] = t2;</span><br></pre></td></tr></table></figure>
+
+<p>中间代码使得编译器可以被分为前端或后端。编译器前端负责产生机器无关的中间代码，编译器后端将中间代码转换成目标机器代码。这样对于一些可以跨平台的编译器而言，它们可以针对不同的平台使用同一个前端和针对不同机器平台的数个后端。</p>
+<h3 id="目标代码生成与优化"><a href="#目标代码生成与优化" class="headerlink" title="目标代码生成与优化"></a>目标代码生成与优化</h3><p>编译器后端主要包括<strong>代码生成器(Code Generator)</strong> 和<strong>目标代码优化器(Target Code Optimizer)</strong> 。代码生成器将中间代码转换成目标机器代码，这个过程十分依赖于目标机器，因为不同机器有着不同的字长、寄存器、整数数据类型和浮点数数据类型等。目标代码优化器对上述的目标代码进行优化，比如选择合适的寻址方式，使用位移来代替乘法运算、删除多余的指令等。</p>
+<p>经过了这六个一系列的过程后，源代码终于被编译成了目标代码，但还是留下了一个问题：<strong>index和array的地址还没有确定</strong> 。如果我们要把目标代码使用编译器编译成真正能够在机器上执行的指令，那么index和array的地址从哪得到？如果index和array定义在跟上面源代码同一个编译单元里面，那么编译器可以为index和array分配空间，确定他们的地址；那如果是定义在的其他程序模块呢？</p>
+</div><h2 id="模块拼装——静态链接"><a href="#模块拼装——静态链接" class="headerlink" title="模块拼装——静态链接"></a>模块拼装——静态链接</h2><div class="story post-story"><p>人们把每个源代码模块独立地编译，然后按照需要将它们“组装”起来，这个组装的过程就是<strong>链接(Linking)</strong> 。链接的主要内容就是把各个模块之间的相互引用部分都处理好，使得各个模块之间都能正确地衔接。从原理上来讲，它的工作是把一些指令对其他符号地址的引用加以修正。链接过程主要包括：<strong>地址个空间分配(Address and Storage Allocation)、符号决议(Symbol Resolution)和重定位</strong> 等这些步骤。</p>
+<p>最基本的静态链接过程：每个模块的源代码文件(如.c)文件经过编译器编译成<strong>目标文件(Object File)**，目标文件和</strong>库(Library)<strong>一起链接形成最终可执行文件。而最常见的库就是</strong>运行时库(Runtime Library)** ，它是支持程序运行的基本函数的集合。库其实是一组目标文件的包，就是一些最常用的代码编译成目标文件后打包存放。</p>
+<p><strong>链接的具体解释：</strong></p>
+<p>比如我们在程序模块main.c中使用另一个模块fun.c中的函数foo()。我们在main.c模块中每一处调用foo的时候都必须确切知道foo这个函数的地址，但是由于每个模块都是单独编译的，在编译器编译main.c的时候它并不知道foo函数的地址，所以它暂时把这些调用foo指令的目标地址搁置，等待最后链接的时候由链接器去将这些指令的目标地址修正。使用链接器，你可以直接引用其他模块的函数和全局变量而无须直到它们的地址，因为链接器在链接的时候，会根据你所引用的符号foo，自动去fun.c模块查找foo的地址，然后将main.c模块中所有引用到foo的指令重新修正，让它们的目标地址为真正的foo函数的地址。这就是静态链接的最基本的过程和作用。</p>
+<p>在链接过程中，对其他定义在目标文件中的函数调用的指令需要被重新调整，对使用其他定义在其他目标文件的变量来说也存在同样的问题：</p>
+<p>假设存在一个全局变量var在目标文件A中。我们在目标文件B有这样一条指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">movl 	$0x2a,var</span><br></pre></td></tr></table></figure>
+
+<p>得到的机器码为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C705(指令码)	00 00 00 00(目标地址) 	2a 00 00 00(源常量) </span><br></pre></td></tr></table></figure>
+
+<p>由于在编译目标文件B的时候，编译器并不知道var的目标地址，所以编译器在没法确定地址大情况下，将这条mov指令的目标地址设为0，等待链接器将目标文件A和B链接起来的时候再将其修正。这个地址修正的过程也被叫做<strong>重定位(Relocation)</strong> ，每个要被修正的地方叫一个<strong>重定位入口(Relocation Entry)</strong> 。重定位所做的就是给程序中每个这样的绝对地址引用的位置“打补丁”，使它们指向正确到地址。</p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/10/07/RealAnalysis1/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2021/11/11/elfbook2/>http://yoursite.com/2021/11/11/elfbook2/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-11T22:17:58-08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年11月11日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/11/11/elfbook2/&title=程序员的自我修养Chap2：静态链接 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/11/11/elfbook2/&title=程序员的自我修养Chap2：静态链接 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/11/11/elfbook2/&title=程序员的自我修养Chap2：静态链接 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/11/01/graphtheory/graphtheory7/'>
+          <p class='title'>图论Chap7 图的着色<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>顶点着色定义：图G的一个k-顶点着色是指把k种颜色分配给图G的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个正常k-顶点着色，若图G有一个正常k-顶点着色时，称G是可k-...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2021/11/11/elfbook2/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2515,161 +2718,34 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Zya's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/ctf/" href="/categories/ctf/"
-            active-action="action-categoriesctf"
-            ><div class='name'>ctf</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/ctf/pwn/" href="/categories/ctf/pwn/"
-            active-action="action-categoriesctfpwn"
-            ><div class='name'>pwn</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/" href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/"
-            active-action="action-categoriesustc-E59BBEE8AEBA-E695B0E5ADA6-E59BBEE8AEBA"
-            ><div class='name'>-[ustc,图论] -[数学,图论]</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/" href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/"
-            active-action="action-categoriesE695B0E5ADA6E5AE9EE58F98E587BDE695B0"
-            ><div class='name'>实变函数</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180"
-            ><div class='name'>计算机基础</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180E6B187E7BC96E8AFADE8A880"
-            ><div class='name'>汇编语言</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180E7A88BE5BA8FE59198E79A84E887AAE68891E4BFAEE585BB"
-            ><div class='name'>程序员的自我修养</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="toc-text">编译和链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E7%BC%96%E8%AF%91"><span class="toc-text">预编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-text">编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96"><span class="toc-text">汇编</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-text">编译器做了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-text">词法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-text">语法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-text">语义分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E8%AF%AD%E8%A8%80%E7%94%9F%E6%88%90"><span class="toc-text">中间语言生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-text">目标代码生成与优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E6%8B%BC%E8%A3%85%E2%80%94%E2%80%94%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-text">模块拼装——静态链接</span></a></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/pwn/" style="font-size: 14px; color: #999">pwn</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">汇编语言</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2698,14 +2774,15 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="程序员的自我修养Chap2：静态链接";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2819,8 +2896,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636697911042')
-      volantis.js('/js/message.js?time=1636697911042', () => {
+      volantis.css('/css/message.css?time=1636697911001')
+      volantis.js('/js/message.js?time=1636697911001', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2865,8 +2942,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636697911042')
-      volantis.js('/js/message.js?time=1636697911042', () => {
+      volantis.css('/css/message.css?time=1636697911001')
+      volantis.js('/js/message.js?time=1636697911001', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2925,8 +3002,8 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636697911042')
-      volantis.js('/js/message.js?time=1636697911042', () => {
+      volantis.css('/css/message.css?time=1636697911001')
+      volantis.js('/js/message.js?time=1636697911001', () => {
         hideMessage(done);
       });
     } else {
@@ -3144,7 +3221,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1636697911042')
+    volantis.js('/js/rightMenu.js?time=1636697911001')
   </script>
 
 
@@ -3158,19 +3235,19 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1636697911042")
+        volantis.js("/js/plugins/sites.js?time=1636697911001")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1636697911042")
+        volantis.js("/js/plugins/friends.js?time=1636697911001")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1636697911042")
+        volantis.js("/js/plugins/contributors.js?time=1636697911001")
       }
     
   };
@@ -3271,7 +3348,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1636697911042').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1636697911001').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3280,7 +3357,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
 
 
-<script src="/js/app.js?time=1636697911042.js"></script>
+<script src="/js/app.js?time=1636697911001.js"></script>
 
 
 <!-- optional -->
@@ -3293,7 +3370,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1636697911042");
+    return volantis.js("/js/search/hexo.js?time=1636697911001");
   }
 
   function loadSearchService() {
@@ -3540,7 +3617,7 @@ $\lim_{k\rightarrow \infty}A_k$，同理可定义递增集合列（其极限集�
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/数学/","name":"数学"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Zya's Blog","url":"http://yoursite.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":""},"publisher":{"@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/","name":"计算机基础"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/计算机基础/程序员的自我修养/","name":"程序员的自我修养"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/11/11/elfbook2/","name":"程序员的自我修养Chap2：静态链接"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"程序员的自我修养Chap2：静态链接","description":"","datePublished":"2021-11-12T06:13:32.274Z","dateModified":"2021-11-12T06:17:58.005Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/11/11/elfbook2/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/11/11/elfbook2/","wordCount":0,"articleSection":"计算机基础","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
