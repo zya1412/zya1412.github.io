@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://yoursite.com/2021/11/01/graphtheory/graphtheory7/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/11/12/graphtheory/graphtheory7/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,23 +20,23 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1636697911005" as="style">
+  <link rel="preload" href="/css/style.css?time=1636708306722" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>图论Chap7 图的着色 - Zya's Blog</title>
   <meta name="keywords" content="图论,null">
-  <meta name="description" content="顶点着色定义：图G的一个k-顶点着色是指把k种颜色分配给图G的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个正常k-顶点着色，若图G有一个正常k-顶点着色时，称G是可k-顶点着色的.图G的顶点色数指的是图G可正常着色的最少色数k，简称色数，记为$ \chi(G)$. 顶点着色的性质：  $v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) &#x3D; 1">
+  <meta name="description" content="顶点着色定义：图$G$的一个k-顶点着色是指把k种颜色分配给图$G$的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个正常k-顶点着色，若图$G$有一个正常k-顶点着色时，称$G$是可k-顶点着色的.图$G$的顶点色数指的是图$G$可正常着色的最少色数k，简称色数，记为$ \chi(G)$. 顶点着色的性质：  $v$阶图的色数满足$1 \leq \chi(G) \leq v">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图论Chap7 图的着色">
-<meta property="og:url" content="http://yoursite.com/2021/11/01/graphtheory/graphtheory7/index.html">
+<meta property="og:url" content="http://yoursite.com/2021/11/12/graphtheory/graphtheory7/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
-<meta property="og:description" content="顶点着色定义：图G的一个k-顶点着色是指把k种颜色分配给图G的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个正常k-顶点着色，若图G有一个正常k-顶点着色时，称G是可k-顶点着色的.图G的顶点色数指的是图G可正常着色的最少色数k，简称色数，记为$ \chi(G)$. 顶点着色的性质：  $v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) &#x3D; 1">
+<meta property="og:description" content="顶点着色定义：图$G$的一个k-顶点着色是指把k种颜色分配给图$G$的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个正常k-顶点着色，若图$G$有一个正常k-顶点着色时，称$G$是可k-顶点着色的.图$G$的顶点色数指的是图$G$可正常着色的最少色数k，简称色数，记为$ \chi(G)$. 顶点着色的性质：  $v$阶图的色数满足$1 \leq \chi(G) \leq v">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2021-11-01T07:53:45.945Z">
-<meta property="article:modified_time" content="2021-11-01T07:53:45.949Z">
+<meta property="article:published_time" content="2021-11-12T09:10:31.929Z">
+<meta property="article:modified_time" content="2021-11-12T09:10:31.933Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1636697911005" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1636697911005"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1636708306722" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1636708306722"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2426,7 +2426,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/01/graphtheory/graphtheory7/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/12/graphtheory/graphtheory7/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Zya's Blog">
   </span>
@@ -2474,10 +2474,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-01T00:53:45-07:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-12T01:10:31-08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年11月1日</p>
+    <p>发布于：2021年11月12日</p>
   </a>
 </div>
 
@@ -2498,23 +2498,58 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="顶点着色"><a href="#顶点着色" class="headerlink" title="顶点着色"></a>顶点着色</h1><p><strong>定义：</strong>图G的一个<strong>k-顶点着色</strong>是指把k种颜色分配给图G的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个<strong>正常k-顶点着色</strong>，若图G有一个正常k-顶点着色时，称G是可<strong>k-顶点着色的</strong>.图G的<strong>顶点色数</strong>指的是图G可正常着色的最少色数k，简称色数，记为$ \chi(G)$.</p>
+    <h1 id="顶点着色"><a href="#顶点着色" class="headerlink" title="顶点着色"></a>顶点着色</h1><p><strong>定义：</strong>图$G$的一个<strong>k-顶点着色</strong>是指把k种颜色分配给图$G$的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个<strong>正常k-顶点着色</strong>，若图$G$有一个正常k-顶点着色时，称$G$是可<strong>k-顶点着色的</strong>.图$G$的<strong>顶点色数</strong>指的是图$G$可正常着色的最少色数k，简称色数，记为$ \chi(G)$.</p>
 <p>顶点着色的性质：</p>
 <ol>
-<li>$v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) = 1$当且仅当G是零图(无边)；$\chi(G) = v$当且仅当G是$v$阶完全图.</li>
-<li>$\chi(G) = 2$当且仅当G是有边二分图</li>
+<li>$v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) = 1$当且仅当$G$是零图(无边)；$\chi(G) = v$当且仅当$G$是$v$阶完全图.</li>
+<li>$\chi(G) = 2$当且仅当$G$是有边二分图</li>
 <li>$\chi(C_v) = 2 (v \equiv 0 (mod2))且 \chi(C_v) = 3 (v \equiv 1 (mod2))$​</li>
-<li>若图H是G的子图，则$\chi(H) \leq chi(G)$</li>
+<li>若图H是$G$的子图，则$\chi(H) \leq chi(G)$</li>
 </ol>
-<p><strong>定理：</strong>对任何图G，$\chi(G) \leq \bigtriangleup(G) + 1$.</p>
-<p><strong>定理(Brooks)：</strong>设$v(v \geq 3)$阶连通图G不是完全图也不是奇圈，则$\chi(G) \leq \bigtriangleup(G)$.</p>
-<h1 id="边着色"><a href="#边着色" class="headerlink" title="边着色"></a>边着色</h1><p><strong>定义：</strong>图G的一个<strong>k-边着色</strong>是指把k种颜色分配给图G的边，使每条边都分配一种颜色；若相邻边颜色不同，则称这种着色是一个<strong>正常k-边着色</strong>，若图G有一个正常k-边着色时，称G是可<strong>k-边着色的</strong>.图G的<strong>边色数</strong>指的是图G可正常着色的最少色数k，记为$ \chi^{‘}(G)$​​​.</p>
+<p><strong>定理：</strong>对任何图$G$，$\chi(G) \leq \bigtriangleup(G) + 1$.</p>
+<p><strong>定理(Brooks)：</strong>设$v(v \geq 3)$阶连通图$G$不是完全图也不是奇圈，则$\chi(G) \leq \bigtriangleup(G)$.</p>
+<h1 id="边着色"><a href="#边着色" class="headerlink" title="边着色"></a>边着色</h1><p><strong>定义：</strong>图$G$的一个<strong>k-边着色</strong>是指把k种颜色分配给图G的边，使每条边都分配一种颜色；若相邻边颜色不同，则称这种着色是一个<strong>正常k-边着色</strong>，若图$G$有一个正常k-边着色时，称$G$是可<strong>k-边着色的</strong>.图$G$的<strong>边色数</strong>指的是图$G$可正常着色的最少色数k，记为$ \chi^{‘}(G)$.</p>
 <p><strong>引理：</strong>若连通图G不是奇圈，则存在一种2-边着色，使得所用的两种颜色在每个度数大于等于2的顶点处都出现.</p>
-<p>给定图G的k-边着色$C$，用$c(v)$表示顶点v关联的边中出现的颜色数，显然$c(v) \leq deg(v)$​.C是正常k-边着色，当且仅当等号对G中所有顶点v均成立</p>
-<p><strong>定义：</strong>设$C$​和$C^{’}$​是图G的两种k-边着色，如果$\sum_{u \in V( G)}c^{‘}(v) \geq \sum_{u \in V( G)}c(v)$​​​，则称k-边着色$C^{‘}$是对$C$的一个<strong>改进</strong>，不能再改进的k-边着色称为最佳-k边着色</p>
-<p><strong>引理：</strong>设$C = (E_1,E_2,…,E_k)$​是图G的一个最佳k-边着色，如果存在一个顶点$v_0$和两种颜色i，j，使得i色不在$v_0$关联的边中出现，但j色在$v_0$关联的边中至少出现两次，则边导出子图$G[E_i \cup E_j]$中含$v_0$的连通片是一个奇圈.</p>
-<p><strong>定理：</strong>若G是二分图，则$ \chi^{‘}(G) = \bigtriangleup(G)$.</p>
-<p><strong>定理(Vizing)：</strong>若G是简单图，则$ \chi^{‘}(G) = \bigtriangleup(G)或 \chi^{‘}(G) = \bigtriangleup(G)  +1$</p>
+<p>给定图$G$的k-边着色$C$，用$c(v)$表示顶点v关联的边中出现的颜色数，显然$c(v) \leq deg(v)$.C是正常k-边着色，当且仅当等号对$G$中所有顶点v均成立</p>
+<p><strong>定义：</strong>设$C$和$C^{’}$是图$G$的两种k-边着色，如果$\sum_{u \in V( G)}c^{‘}(v) \geq \sum_{u \in V( G)}c(v)$，则称k-边着色$C^{‘}$是对$C$的一个<strong>改进</strong>，不能再改进的k-边着色称为最佳-k边着色</p>
+<p><strong>引理：</strong>设$C = (E_1,E_2,…,E_k)$是图$G$的一个最佳k-边着色，如果存在一个顶点$v_0$和两种颜色i，j，使得i色不在$v_0$关联的边中出现，但j色在$v_0$关联的边中至少出现两次，则边导出子图$G[E_i \cup E_j]$中含$v_0$的连通片是一个奇圈.</p>
+<p><strong>定理：</strong>若$G$是二分图，则$ \chi^{‘}(G) = \bigtriangleup(G)$.</p>
+<p><strong>定理(Vizing)：</strong>若$G$是简单图，则$ \chi^{‘}(G) = \bigtriangleup(G)或 \chi^{‘}(G) = \bigtriangleup(G)  +1$</p>
+<p><strong>引理：</strong> 设$M,N$是图$G$中两个无公共边匹配，$|M| \geq |N|,$则存在$G$中两个无公共边的匹配$M’$$N’$，使得</p>
+<p>$|M’| = |M| - 1,|N’| = |N| - 1,M’ \bigcup N’$</p>
+<p><strong>定理：</strong>设$G$是二分图，$\mathcal{E} = |E(G)|,\bigtriangleup \leq p$，则存在$G$的p个不相交匹配$M_1,M_2,…,M_p$，使得$E(G) = \bigcup_{i = 1}^{p}M_i$,且对$1 \leq i \leq p$，有$  \left\lceil {\mathcal{E} / p} \right\rceil \leq |M_i| \leq \left\lfloor {\mathcal{E} / p} \right\rceil $.</p>
+<h1 id="平面图着色"><a href="#平面图着色" class="headerlink" title="平面图着色"></a>平面图着色</h1><p><strong>定义：</strong>平面图$G$的一个<strong>正常着色</strong>是指：对其一个平面嵌入$G’$的每个面(国家)着一种颜色，使得相邻的两个面着不同的颜色.若能用k中颜色给$G’$的面正常着色，就称$G$是<strong>k-面着色的</strong>.若$G$是k-面着色的，但不是(k - 1)-面着色的，则称$G$的<strong>面色数</strong>为k，记为$\chi_*(G) = k$</p>
+<p><strong>定义：</strong>设$G$是平面图，$G’$是$G$的平面嵌入，构造$G$的<strong>对偶图</strong>$G^*$如下：</p>
+<ol>
+<li>$G’$的每个面$f$，都有$G^{<em>}$​​​​的一个顶点$f^{</em>}$与之对应</li>
+<li>$G’$​​的每条边e都有$G^{<em>}$​​的一条边$e^{</em>}$​​与之对应：若$e$​​在$G’$​​的两个面$f_i$​​和$f_j$​​的公共边界上，则在$G^{<em>}$​​中$e</em>$​​连接的这两个面对应的顶点是$f_{i}^{<em>}$和​$f_{j}^{</em>}$​​；若e只在一个面$f_i$​​的边界上，则在$G^{<em>}$​中对应的$e^{</em>}$​是以$f_{i}^{*}$​为端点的环</li>
+</ol>
+<p>由定义易知下述性质成立：</p>
+<ol>
+<li>$G^{*}$是平面图，且是平面嵌入</li>
+<li>若e是$G’$中的环，则它对应的边$e^{<em>}$是$G^{</em>}$的桥；若e是$G’$中的桥，则$e^{<em>}$是$G^{</em>}$的环</li>
+<li>$G^{*}$是连通图</li>
+<li>若$G’$​​的面$f_{i}^{<em>}$​​和$f_{j}^{</em>}$​​的边界上至少有两条公共边，则关联$f_{i}^{<em>}$​​和$f_{j}^{</em>}$​的边有重边</li>
+<li>两个同构图的对偶图不一定同构</li>
+</ol>
+<p><strong>定理：</strong>设$G^{<em>}$是连通平面图$G$的对偶图，$n^{</em>},m^{<em>},\phi^{</em>}$和$n,m,\phi$分别是$G^{*}$和$G$的顶点数，面数和边数，则</p>
+<ol>
+<li>$n^{<em>} = \phi,m^{</em>} = m,\phi^{*} = n$；</li>
+<li>设$G^{<em>}$的顶点$f^{</em>}$与$G’$的面$f$对应，则$deg_{G^{<em>}}(f^{</em>}) = deg_{G}(f)$.</li>
+</ol>
+<p><strong>定理：</strong>设$G$是连通的无环平面图，则$G$是k-面着色的，当且仅当它的对偶图$G^{*}$是可k-顶点着色的</p>
+<p><strong>定理：</strong>任何平面图都是可5-顶点着色的.</p>
+<h1 id="颜色多项式"><a href="#颜色多项式" class="headerlink" title="颜色多项式"></a>颜色多项式</h1><p>该概念是birkhoff为攻克四色猜想而提出的(虽然不懂为什么要学)</p>
+<p>给定标定图$G$($G$的顶点已标号)和颜色数k，用$p_k(G)$表示图$G$的正常顶点着色的方法数，显然$p_k(G) &gt; 0$，当且仅当$G$是可k-顶点着色的，$p_k(G)$是k的一元函数，定义域是$k \in N,k \geq \chi(G)$，但是$G$不同，这个颜色也不同</p>
+<p>根据$p_k(G)$的定义可得到结论如下：</p>
+<ul>
+<li>$p_k(G) = k^{\gamma}$，当且仅当$G$是$\gamma$阶零图</li>
+<li>$p_k(G) = k(k - 1)(k - 2)…(k - \gamma + 1)$，当且仅当G是$\gamma$阶完全图</li>
+<li>$p_4(平面图) &gt; 0$，当且仅当四色猜想成立</li>
+<li>若$G_1,G_2,…,G_{w}$​是图$G$​的连通片，则$p_k(G) = \prod_{i = 1}^{w}P_k(G_i)$.</li>
+</ul>
+<p><strong>定理：</strong>若$G$是简单图，则对$G$的任意一条边<em>e</em>，都有$p_k(G) = p_k(G - e) - p_k(G * e)$.</p>
+<p><strong>推论：</strong>对于任何$\gamma$个顶点$\mathcal{E}$条边的图$G$，$p_k(G)$都是$k$ 的$\gamma$次多项式，且按降幂排列时，首项系数为1，第二项系数为$-\gamma$，常数项为0，且系数是正负交替的.</p>
 
 
   </div>
@@ -2534,7 +2569,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://yoursite.com/2021/11/01/graphtheory/graphtheory7/>http://yoursite.com/2021/11/01/graphtheory/graphtheory7/</a></p>
+                <p>本文永久链接是：<a href=http://yoursite.com/2021/11/12/graphtheory/graphtheory7/>http://yoursite.com/2021/11/12/graphtheory/graphtheory7/</a></p>
               
             
           </blockquote>
@@ -2551,10 +2586,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-01T00:53:45-07:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-12T01:10:31-08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年11月1日</p>
+    <p>更新于：2021年11月12日</p>
   </a>
 </div>
 
@@ -2577,7 +2612,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/11/01/graphtheory/graphtheory7/&title=图论Chap7 图的着色 - Zya's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/11/12/graphtheory/graphtheory7/&title=图论Chap7 图的着色 - Zya's Blog&summary="
           
           >
           
@@ -2589,7 +2624,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/11/01/graphtheory/graphtheory7/&title=图论Chap7 图的着色 - Zya's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/11/12/graphtheory/graphtheory7/&title=图论Chap7 图的着色 - Zya's Blog&summary="
           
           >
           
@@ -2601,7 +2636,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/11/01/graphtheory/graphtheory7/&title=图论Chap7 图的着色 - Zya's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/11/12/graphtheory/graphtheory7/&title=图论Chap7 图的着色 - Zya's Blog&summary="
           
           >
           
@@ -2634,21 +2669,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/11/11/elfbook2/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>程序员的自我修养Chap2：静态链接</p>
+      
+        <a class='next' href='/2021/11/11/elfbook2/'>
+          <p class='title'>程序员的自我修养Chap2：静态链接<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>编译和链接一个c程序编译需要四个过程：预处理(Prepressing)，编译(Compilation)，汇编(Assembly)和链接(Linking).
 以下我们以gcc编译命令为例
 预编译第...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/10/31/graphtheory/graphtheory6/'>
-          <p class='title'>图论Chap6 欧拉图和汉密尔顿图<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>欧拉图基本概念定义：经过图G每条边的行迹称为欧拉迹；经过图G每条边的闭行迹称为欧拉回路，如果图G含有欧拉回路，则称G为欧拉图.
-定理：设G是连通图，则下面三个命题等价：
-
-G是欧拉图
-G的每个顶...</p>
         </a>
       
     </div>
@@ -2664,7 +2690,7 @@ G的每个顶...</p>
   
   <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2021/11/01/graphtheory/graphtheory7/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2021/11/12/graphtheory/graphtheory7/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论</p>
     
@@ -2863,8 +2889,8 @@ G的每个顶...</p>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636697911005')
-      volantis.js('/js/message.js?time=1636697911005', () => {
+      volantis.css('/css/message.css?time=1636708306722')
+      volantis.js('/js/message.js?time=1636708306722', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2909,8 +2935,8 @@ G的每个顶...</p>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636697911005')
-      volantis.js('/js/message.js?time=1636697911005', () => {
+      volantis.css('/css/message.css?time=1636708306722')
+      volantis.js('/js/message.js?time=1636708306722', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2969,8 +2995,8 @@ G的每个顶...</p>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636697911005')
-      volantis.js('/js/message.js?time=1636697911005', () => {
+      volantis.css('/css/message.css?time=1636708306722')
+      volantis.js('/js/message.js?time=1636708306722', () => {
         hideMessage(done);
       });
     } else {
@@ -3188,7 +3214,7 @@ G的每个顶...</p>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1636697911005')
+    volantis.js('/js/rightMenu.js?time=1636708306722')
   </script>
 
 
@@ -3202,19 +3228,19 @@ G的每个顶...</p>
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1636697911005")
+        volantis.js("/js/plugins/sites.js?time=1636708306722")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1636697911005")
+        volantis.js("/js/plugins/friends.js?time=1636708306722")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1636697911005")
+        volantis.js("/js/plugins/contributors.js?time=1636708306722")
       }
     
   };
@@ -3315,7 +3341,7 @@ G的每个顶...</p>
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1636697911005').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1636708306722').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3324,7 +3350,7 @@ G的每个顶...</p>
 
 
 
-<script src="/js/app.js?time=1636697911005.js"></script>
+<script src="/js/app.js?time=1636708306722.js"></script>
 
 
 <!-- optional -->
@@ -3337,7 +3363,7 @@ G的每个顶...</p>
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1636697911005");
+    return volantis.js("/js/search/hexo.js?time=1636708306722");
   }
 
   function loadSearchService() {
@@ -3638,7 +3664,7 @@ G的每个顶...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc-图论-数学-图论/","name":"-[ustc,图论] -[数学,图论]"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/11/01/graphtheory/graphtheory7/","name":"图论Chap7 图的着色"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"图论Chap7 图的着色","description":"","datePublished":"2021-11-01T07:53:45.945Z","dateModified":"2021-11-01T07:53:45.949Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/11/01/graphtheory/graphtheory7/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/11/01/graphtheory/graphtheory7/","wordCount":0,"articleSection":"-[ustc,图论] -[数学,图论]","keywords":"图论","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc-图论-数学-图论/","name":"-[ustc,图论] -[数学,图论]"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/11/12/graphtheory/graphtheory7/","name":"图论Chap7 图的着色"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"图论Chap7 图的着色","description":"","datePublished":"2021-11-12T09:10:31.929Z","dateModified":"2021-11-12T09:10:31.933Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/11/12/graphtheory/graphtheory7/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/11/12/graphtheory/graphtheory7/","wordCount":0,"articleSection":"-[ustc,图论] -[数学,图论]","keywords":"图论","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>图论Chap7 图的着色</title>
+      <link href="/2021/11/12/graphtheory/graphtheory7/"/>
+      <url>/2021/11/12/graphtheory/graphtheory7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="顶点着色"><a href="#顶点着色" class="headerlink" title="顶点着色"></a>顶点着色</h1><p><strong>定义：</strong>图$G$的一个<strong>k-顶点着色</strong>是指把k种颜色分配给图$G$的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个<strong>正常k-顶点着色</strong>，若图$G$有一个正常k-顶点着色时，称$G$是可<strong>k-顶点着色的</strong>.图$G$的<strong>顶点色数</strong>指的是图$G$可正常着色的最少色数k，简称色数，记为$ \chi(G)$.</p><p>顶点着色的性质：</p><ol><li>$v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) = 1$当且仅当$G$是零图(无边)；$\chi(G) = v$当且仅当$G$是$v$阶完全图.</li><li>$\chi(G) = 2$当且仅当$G$是有边二分图</li><li>$\chi(C_v) = 2 (v \equiv 0 (mod2))且 \chi(C_v) = 3 (v \equiv 1 (mod2))$​</li><li>若图H是$G$的子图，则$\chi(H) \leq chi(G)$</li></ol><p><strong>定理：</strong>对任何图$G$，$\chi(G) \leq \bigtriangleup(G) + 1$.</p><p><strong>定理(Brooks)：</strong>设$v(v \geq 3)$阶连通图$G$不是完全图也不是奇圈，则$\chi(G) \leq \bigtriangleup(G)$.</p><h1 id="边着色"><a href="#边着色" class="headerlink" title="边着色"></a>边着色</h1><p><strong>定义：</strong>图$G$的一个<strong>k-边着色</strong>是指把k种颜色分配给图G的边，使每条边都分配一种颜色；若相邻边颜色不同，则称这种着色是一个<strong>正常k-边着色</strong>，若图$G$有一个正常k-边着色时，称$G$是可<strong>k-边着色的</strong>.图$G$的<strong>边色数</strong>指的是图$G$可正常着色的最少色数k，记为$ \chi^{‘}(G)$.</p><p><strong>引理：</strong>若连通图G不是奇圈，则存在一种2-边着色，使得所用的两种颜色在每个度数大于等于2的顶点处都出现.</p><p>给定图$G$的k-边着色$C$，用$c(v)$表示顶点v关联的边中出现的颜色数，显然$c(v) \leq deg(v)$.C是正常k-边着色，当且仅当等号对$G$中所有顶点v均成立</p><p><strong>定义：</strong>设$C$和$C^{’}$是图$G$的两种k-边着色，如果$\sum_{u \in V( G)}c^{‘}(v) \geq \sum_{u \in V( G)}c(v)$，则称k-边着色$C^{‘}$是对$C$的一个<strong>改进</strong>，不能再改进的k-边着色称为最佳-k边着色</p><p><strong>引理：</strong>设$C = (E_1,E_2,…,E_k)$是图$G$的一个最佳k-边着色，如果存在一个顶点$v_0$和两种颜色i，j，使得i色不在$v_0$关联的边中出现，但j色在$v_0$关联的边中至少出现两次，则边导出子图$G[E_i \cup E_j]$中含$v_0$的连通片是一个奇圈.</p><p><strong>定理：</strong>若$G$是二分图，则$ \chi^{‘}(G) = \bigtriangleup(G)$.</p><p><strong>定理(Vizing)：</strong>若$G$是简单图，则$ \chi^{‘}(G) = \bigtriangleup(G)或 \chi^{‘}(G) = \bigtriangleup(G)  +1$</p><p><strong>引理：</strong> 设$M,N$是图$G$中两个无公共边匹配，$|M| \geq |N|,$则存在$G$中两个无公共边的匹配$M’$$N’$，使得</p><p>$|M’| = |M| - 1,|N’| = |N| - 1,M’ \bigcup N’$</p><p><strong>定理：</strong>设$G$是二分图，$\mathcal{E} = |E(G)|,\bigtriangleup \leq p$，则存在$G$的p个不相交匹配$M_1,M_2,…,M_p$，使得$E(G) = \bigcup_{i = 1}^{p}M_i$,且对$1 \leq i \leq p$，有$  \left\lceil {\mathcal{E} / p} \right\rceil \leq |M_i| \leq \left\lfloor {\mathcal{E} / p} \right\rceil $.</p><h1 id="平面图着色"><a href="#平面图着色" class="headerlink" title="平面图着色"></a>平面图着色</h1><p><strong>定义：</strong>平面图$G$的一个<strong>正常着色</strong>是指：对其一个平面嵌入$G’$的每个面(国家)着一种颜色，使得相邻的两个面着不同的颜色.若能用k中颜色给$G’$的面正常着色，就称$G$是<strong>k-面着色的</strong>.若$G$是k-面着色的，但不是(k - 1)-面着色的，则称$G$的<strong>面色数</strong>为k，记为$\chi_*(G) = k$</p><p><strong>定义：</strong>设$G$是平面图，$G’$是$G$的平面嵌入，构造$G$的<strong>对偶图</strong>$G^*$如下：</p><ol><li>$G’$的每个面$f$，都有$G^{<em>}$​​​​的一个顶点$f^{</em>}$与之对应</li><li>$G’$​​的每条边e都有$G^{<em>}$​​的一条边$e^{</em>}$​​与之对应：若$e$​​在$G’$​​的两个面$f_i$​​和$f_j$​​的公共边界上，则在$G^{<em>}$​​中$e</em>$​​连接的这两个面对应的顶点是$f_{i}^{<em>}$和​$f_{j}^{</em>}$​​；若e只在一个面$f_i$​​的边界上，则在$G^{<em>}$​中对应的$e^{</em>}$​是以$f_{i}^{*}$​为端点的环</li></ol><p>由定义易知下述性质成立：</p><ol><li>$G^{*}$是平面图，且是平面嵌入</li><li>若e是$G’$中的环，则它对应的边$e^{<em>}$是$G^{</em>}$的桥；若e是$G’$中的桥，则$e^{<em>}$是$G^{</em>}$的环</li><li>$G^{*}$是连通图</li><li>若$G’$​​的面$f_{i}^{<em>}$​​和$f_{j}^{</em>}$​​的边界上至少有两条公共边，则关联$f_{i}^{<em>}$​​和$f_{j}^{</em>}$​的边有重边</li><li>两个同构图的对偶图不一定同构</li></ol><p><strong>定理：</strong>设$G^{<em>}$是连通平面图$G$的对偶图，$n^{</em>},m^{<em>},\phi^{</em>}$和$n,m,\phi$分别是$G^{*}$和$G$的顶点数，面数和边数，则</p><ol><li>$n^{<em>} = \phi,m^{</em>} = m,\phi^{*} = n$；</li><li>设$G^{<em>}$的顶点$f^{</em>}$与$G’$的面$f$对应，则$deg_{G^{<em>}}(f^{</em>}) = deg_{G}(f)$.</li></ol><p><strong>定理：</strong>设$G$是连通的无环平面图，则$G$是k-面着色的，当且仅当它的对偶图$G^{*}$是可k-顶点着色的</p><p><strong>定理：</strong>任何平面图都是可5-顶点着色的.</p><h1 id="颜色多项式"><a href="#颜色多项式" class="headerlink" title="颜色多项式"></a>颜色多项式</h1><p>该概念是birkhoff为攻克四色猜想而提出的(虽然不懂为什么要学)</p><p>给定标定图$G$($G$的顶点已标号)和颜色数k，用$p_k(G)$表示图$G$的正常顶点着色的方法数，显然$p_k(G) &gt; 0$，当且仅当$G$是可k-顶点着色的，$p_k(G)$是k的一元函数，定义域是$k \in N,k \geq \chi(G)$，但是$G$不同，这个颜色也不同</p><p>根据$p_k(G)$的定义可得到结论如下：</p><ul><li>$p_k(G) = k^{\gamma}$，当且仅当$G$是$\gamma$阶零图</li><li>$p_k(G) = k(k - 1)(k - 2)…(k - \gamma + 1)$，当且仅当G是$\gamma$阶完全图</li><li>$p_4(平面图) &gt; 0$，当且仅当四色猜想成立</li><li>若$G_1,G_2,…,G_{w}$​是图$G$​的连通片，则$p_k(G) = \prod_{i = 1}^{w}P_k(G_i)$.</li></ul><p><strong>定理：</strong>若$G$是简单图，则对$G$的任意一条边<em>e</em>，都有$p_k(G) = p_k(G - e) - p_k(G * e)$.</p><p><strong>推论：</strong>对于任何$\gamma$个顶点$\mathcal{E}$条边的图$G$，$p_k(G)$都是$k$ 的$\gamma$次多项式，且按降幂排列时，首项系数为1，第二项系数为$-\gamma$，常数项为0，且系数是正负交替的.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -[ustc,图论] -[数学,图论] </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>程序员的自我修养Chap2：静态链接</title>
       <link href="/2021/11/11/elfbook2/"/>
       <url>/2021/11/11/elfbook2/</url>
@@ -19,31 +44,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>图论Chap7 图的着色</title>
-      <link href="/2021/11/01/graphtheory/graphtheory7/"/>
-      <url>/2021/11/01/graphtheory/graphtheory7/</url>
-      
-        <content type="html"><![CDATA[<h1 id="顶点着色"><a href="#顶点着色" class="headerlink" title="顶点着色"></a>顶点着色</h1><p><strong>定义：</strong>图G的一个<strong>k-顶点着色</strong>是指把k种颜色分配给图G的顶点，使每个顶点都分配一种颜色；若相邻顶点颜色不同，则称这种着色是一个<strong>正常k-顶点着色</strong>，若图G有一个正常k-顶点着色时，称G是可<strong>k-顶点着色的</strong>.图G的<strong>顶点色数</strong>指的是图G可正常着色的最少色数k，简称色数，记为$ \chi(G)$.</p><p>顶点着色的性质：</p><ol><li>$v$阶图的色数满足$1 \leq \chi(G) \leq v;\chi(G) = 1$当且仅当G是零图(无边)；$\chi(G) = v$当且仅当G是$v$阶完全图.</li><li>$\chi(G) = 2$当且仅当G是有边二分图</li><li>$\chi(C_v) = 2 (v \equiv 0 (mod2))且 \chi(C_v) = 3 (v \equiv 1 (mod2))$​</li><li>若图H是G的子图，则$\chi(H) \leq chi(G)$</li></ol><p><strong>定理：</strong>对任何图G，$\chi(G) \leq \bigtriangleup(G) + 1$.</p><p><strong>定理(Brooks)：</strong>设$v(v \geq 3)$阶连通图G不是完全图也不是奇圈，则$\chi(G) \leq \bigtriangleup(G)$.</p><h1 id="边着色"><a href="#边着色" class="headerlink" title="边着色"></a>边着色</h1><p><strong>定义：</strong>图G的一个<strong>k-边着色</strong>是指把k种颜色分配给图G的边，使每条边都分配一种颜色；若相邻边颜色不同，则称这种着色是一个<strong>正常k-边着色</strong>，若图G有一个正常k-边着色时，称G是可<strong>k-边着色的</strong>.图G的<strong>边色数</strong>指的是图G可正常着色的最少色数k，记为$ \chi^{‘}(G)$​​​.</p><p><strong>引理：</strong>若连通图G不是奇圈，则存在一种2-边着色，使得所用的两种颜色在每个度数大于等于2的顶点处都出现.</p><p>给定图G的k-边着色$C$，用$c(v)$表示顶点v关联的边中出现的颜色数，显然$c(v) \leq deg(v)$​.C是正常k-边着色，当且仅当等号对G中所有顶点v均成立</p><p><strong>定义：</strong>设$C$​和$C^{’}$​是图G的两种k-边着色，如果$\sum_{u \in V( G)}c^{‘}(v) \geq \sum_{u \in V( G)}c(v)$​​​，则称k-边着色$C^{‘}$是对$C$的一个<strong>改进</strong>，不能再改进的k-边着色称为最佳-k边着色</p><p><strong>引理：</strong>设$C = (E_1,E_2,…,E_k)$​是图G的一个最佳k-边着色，如果存在一个顶点$v_0$和两种颜色i，j，使得i色不在$v_0$关联的边中出现，但j色在$v_0$关联的边中至少出现两次，则边导出子图$G[E_i \cup E_j]$中含$v_0$的连通片是一个奇圈.</p><p><strong>定理：</strong>若G是二分图，则$ \chi^{‘}(G) = \bigtriangleup(G)$.</p><p><strong>定理(Vizing)：</strong>若G是简单图，则$ \chi^{‘}(G) = \bigtriangleup(G)或 \chi^{‘}(G) = \bigtriangleup(G)  +1$</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> -[ustc,图论] -[数学,图论] </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 图论 </tag>
-            
-        </tags>
       
     </entry>
     
