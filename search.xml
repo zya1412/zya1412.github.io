@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>图论Chap9 网络流理论</title>
+      <link href="/2021/11/16/graphtheory/graphtheory9/"/>
+      <url>/2021/11/16/graphtheory/graphtheory9/</url>
+      
+        <content type="html"><![CDATA[<h2 id="网络与流函数"><a href="#网络与流函数" class="headerlink" title="网络与流函数"></a>网络与流函数</h2><div class="story post-story"><p><strong>定义：</strong>一个<strong>网络</strong>可以定义为一个四元组$N = (D,s,t,c)$其中：</p><ol><li>$D$是一个弱连通的有向图；</li><li>$s,t \in V(D)$​，分别称为<strong>源</strong>与<strong>汇</strong>；</li><li>$c:E(D) \rightarrow \mathcal{R}$为<strong>容量函数</strong>，任给$e \in E(D) , c(e) \geq 0$为边$e$的<strong>容量</strong>.​​</li></ol><p><strong>定义：</strong>网络$N = (D,s,t,c)$上的<strong>流函数</strong>为$f:E(D) \rightarrow \mathcal{R}$，要求满足：</p><ol><li>任给$e \in E(D)$，都有$c(e) \geq f(e) \geq 0$；</li><li>任给$v \in V(D) - {s,t}$​，都有$\sum_{e \in \alpha(v)}f(e) - \sum_{e \in \beta(v)}f(e) = 0$，其中$\alpha(v)$是所有以$v$为头的边集，$\beta(v)$是所有以$v$为尾的边集，$f$的<strong>流量</strong>定义为：$Val(f) = \sum_{e \in \alpha(t)}f(e) - \sum_{e \in \beta(t)}f(e) = \sum_{e \in \beta(s)}f(e) - \sum_{e \in \alpha(s)}f(e)$.</li></ol><p><strong>定义：</strong>给定网络$N = (D,s,t,c), S \subset V(D)$​，满足$s \in S,t \in \bar{S} = V(D) - S$​，则称$(S,\bar{S}) = {e = (u,v)|e \in E(D),u \in S,v \in \bar{S}}$为网络$N$的一个<strong>截</strong>，而称$C(S,\bar{S}) = \sum_{e \in (S,\bar{S})}c(e)$为$(S,\bar{S})$的<strong>截量</strong>​.截量最小的截称为<strong>最小截</strong>.</p><p><strong>定理：</strong>设$f$是网络$N = (D,s,t,c)$的流函数，$(S,\bar{S})$是其一个截，则有$Val(f) = \sum_{e \in (S,\bar{S})}f(e) - \sum_{e \in (S,\bar{S})}f(e)$.</p><p><strong>推论：</strong> 设$f$是网络$N = (D,s,t,c)$的流函数，$(S,\bar{S})$是其一个截，则有$Val(f) \leq C(S,\bar{S})$.</p><p><strong>推论：</strong>设$f$​是网络$N = (D,s,t,c)$​的流函数，$(S,\bar{S})$​是其一个截，若$Var(f) = C(S,\bar{S})$​，则$f$​是最大流，$(S,\bar{S})$是最小截.​</p></div><h2 id="Ford-Fulkerson-2F-算法"><a href="#Ford-Fulkerson-2F-算法" class="headerlink" title="Ford-Fulkerson(2F)算法"></a>Ford-Fulkerson(2F)算法</h2><div class="story post-story"><p><strong>定义：</strong>考虑有向图$D$的底图$G$，设$P(s,u)$为$G$中一条以$s$为起点$u$为终点的无向轨道，规定$P(s,u)$的方向从s到u.而$P(s,u)$上每条无向边$\bar{e}$都对应于$D$中的一条有向边$e$.若$e$的方向于$P(s,u)$的方向相同，则称$e$为$P$​的同向边(正向边)；否则称为$P$的反向边.</p><p><strong>定义：</strong>给定网络$N = (D,s,t,c)$，$N$上的流函数$f$，底图$G$中的无向轨道$P(s,u)$定义：</p><ol><li>若$e$是$P(s,u)$的正向边，且$f(e) &lt; c(e)$，则称$e$为<strong>未满载边</strong>；</li><li>若$e$​是$P(s,u)$​的正向边，且$f(e) = c(e)$​，则称$e$​​为<strong>满载边</strong>；</li><li>若$e$​是$P(s,u)$​的反向边，且$f(e) = 0$，则称$e$​​为<strong>零载边</strong>；</li><li>若$e$​是$P(s,u)$​的反向边，且$f(e) &gt; 0$​，则称$e$​为<strong>正载边</strong>；</li></ol><p><strong>定义：</strong>给定网络$N = (D,s,t,c)$，$N$上的流函数$f$，以及$N$中的无向轨道$P(s,v)$​.</p><ol><li>若$l(P) &gt; 0$​ ，则称$P(s,v)$​​是<strong>未满载轨道</strong>；</li><li>若$l(P) = 0$​ ，则称$P(s,v)$​​是<strong>满载轨道</strong>；</li><li>若$l(P) &gt; 0$ 且$v = t$，则称$P(s,v)$是$N$上关于$f$的<strong>可增载轨道</strong>；</li></ol></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> -[ustc,图论] -[数学,图论] </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图论Chap7 图的着色</title>
       <link href="/2021/11/12/graphtheory/graphtheory7/"/>
       <url>/2021/11/12/graphtheory/graphtheory7/</url>
