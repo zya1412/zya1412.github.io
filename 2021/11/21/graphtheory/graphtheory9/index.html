@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://yoursite.com/2021/11/18/graphtheory/graphtheory9/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/11/21/graphtheory/graphtheory9/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,7 +20,7 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1637284290215" as="style">
+  <link rel="preload" href="/css/style.css?time=1637558669974" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -30,13 +30,13 @@
   <meta name="description" content="网络与流函数定义：一个网络可以定义为一个四元组$N &#x3D; (D,s,t,c)$其中：  $D$是一个弱连通的有向图； $s,t \in V(D)$​，分别称为源与汇； $c:E(D) \rightarrow \mathcal{R}$为容量函数，任给$e \in E(D) , c(e) \geq 0$为边$e$的容量.​​  定义：网络$N &#x3D; (D,s,t,c)$上的流函数为$f:E(D) \rig">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图论Chap9 网络流理论">
-<meta property="og:url" content="http://yoursite.com/2021/11/18/graphtheory/graphtheory9/index.html">
+<meta property="og:url" content="http://yoursite.com/2021/11/21/graphtheory/graphtheory9/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
 <meta property="og:description" content="网络与流函数定义：一个网络可以定义为一个四元组$N &#x3D; (D,s,t,c)$其中：  $D$是一个弱连通的有向图； $s,t \in V(D)$​，分别称为源与汇； $c:E(D) \rightarrow \mathcal{R}$为容量函数，任给$e \in E(D) , c(e) \geq 0$为边$e$的容量.​​  定义：网络$N &#x3D; (D,s,t,c)$上的流函数为$f:E(D) \rig">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2021-11-19T01:10:48.747Z">
-<meta property="article:modified_time" content="2021-11-19T01:10:48.747Z">
+<meta property="article:published_time" content="2021-11-22T05:23:51.155Z">
+<meta property="article:modified_time" content="2021-11-22T05:23:51.167Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -1660,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1637284290215" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1637284290215"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1637558669974" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1637558669974"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2426,7 +2426,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/18/graphtheory/graphtheory9/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/21/graphtheory/graphtheory9/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Zya's Blog">
   </span>
@@ -2474,10 +2474,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-18T17:10:48-08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-21T21:23:51-08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年11月18日</p>
+    <p>发布于：2021年11月21日</p>
   </a>
 </div>
 
@@ -2562,7 +2562,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ol>
 <p>令$f \leftarrow \bar{f}$​，转第二步.否则没有找到可增载轨道，输出$f$是最大流，停止.</p>
-<p>**推论：(最大流最小截定理)**在网络中，最大流流量=最小截截量.</p>
+<p><strong>推论：(最大流最小截定理)</strong> 在网络中，最大流流量=最小截截量.</p>
 </div><h2 id="容量有上下界的网络最大流"><a href="#容量有上下界的网络最大流" class="headerlink" title="容量有上下界的网络最大流"></a>容量有上下界的网络最大流</h2><div class="story post-story"><p><strong>定义：</strong>一个容量有上下界的网络可以定义为一个五元组$N = (D,s,t,b,c)$</p>
 <ol>
 <li>$D$是一个弱连通的有向图；</li>
@@ -2579,7 +2579,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>$V(D’) = V(D) \bigcup {s’,t’}$，其中$s’,t’ \notin V(D)$;</li>
 <li>$E(D’) = E(D) \bigcup {(s’,v),(v,t’)|v \in V(D)}$;</li>
 <li>$s’$和$t’$分别为伴随网络$N’$的源与汇；</li>
-<li>容量函数定义为 $$ f(x)=\left{ \begin{aligned} &amp;c(e) - b(e),e \in E(D), \ &amp;\sum_{e \in \alpha(v)}b(e),e = (s’,v),v \in V(D), \ &amp;\sum_{e \in \beta(v)}b(e),e = (v,t’),v \in V(D) \ &amp;+ \infin,e = (s,t) / (t,s) \end{aligned} \right. $$​ </li>
+<li>容量函数定义为 $ f(x)= c(e) - b(e),e \in E(D)$, $f(x) = \sum_{e \in \alpha(v)}b(e),e = (s’,v),v \in V(D)$, $f(x) = \sum_{e \in \beta(v)}b(e),e = (v,t’),v \in V(D)$ ，$f(x) = + \infty,e = (s,t) / (t,s)$.</li>
 </ol>
 <p><strong>定理：</strong>给定网络$N = (D,s,t,b,c)$其伴随网络为$N’ = (D’,s’,t’,c’)$则$N$中存在可行流，当且仅当$N’$中最大流使得任给$v \in V(D)$，边$(s’,v’)$都满载.</p>
 <p><strong>算法：</strong>容量有上下界网络的最大流算法</p>
@@ -2592,6 +2592,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>根据$f’$，构造$N$的一个可行流$f$：任给$e \in E(D),f(e) = f’(e) + b(e)$</li>
 <li>以$f$作为初始流函数，用2F算法求出$N$的最大流，算法停止.</li>
 </ol>
+</div><h2 id="有供需需求的网络流"><a href="#有供需需求的网络流" class="headerlink" title="有供需需求的网络流"></a>有供需需求的网络流</h2><div class="story post-story"><p><strong>定义：</strong>一个有供需约束的网络可以定义为一个六元组$N = (D,X,Y,\sigma,\rho,c)$，其中：</p>
+<ol>
+<li>$D$是一个弱连通的有向图</li>
+<li>$X = {x_1,x_2,…,x_m} \subseteq V(D)$是源集合，每个$x_i(1 \leq i \leq m)$表示一个产地</li>
+<li>$Y = {y_1,y_2,…,y_n} \subseteq V(D)$是汇集合，每个$y_i(1 \leq i \leq n)$表示一个消费市场</li>
+<li>$\sigma : X \rightarrow \mathcal{R}$，$\sigma(x_i)$表示产地$x_i$的产量，$1 \leq i \leq m$</li>
+<li>$\rho :Y \rightarrow \mathcal{R}$，$\rho(y_j)$表示消费市场$y_j$的需求量，$1 \leq j \leq n$</li>
+<li>$c:E(D) \rightarrow \mathcal{R}$为容量函数，任给$e \in E(D)$，$c(e)$为边$e$的容量</li>
+</ol>
+<p><strong>定义：</strong>给定有供需约束的网络$N = (D,X,Y,\sigma,\rho,c)$，$N$上的流函数$f:E(D) \rightarrow \mathcal{R}$，要求满足：</p>
+<ol>
+<li>任给$e \in E(D)$，都有$0 \leq f(e) \leq c(e)$</li>
+<li>任给$v \in V(D) - X \bigcup Y$，都有$\sum_{e \in \alpha(v)}f(e) - \sum_{e \in \beta(v)}f(e) = 0$</li>
+<li>任给$1 \leq i \leq m$​，都有$\sum_{e \in \beta(x_i)}f(e) - \sum_{e \in \alpha(x_i))}f(e) \leq \sigma(x_i)$​，表示从$x_i$​处实际运出量不能超过产量</li>
+<li>任给$1 \leq j \leq n$​，都有$\sum_{e \in \alpha(y_j)}f(e) - \sum_{e \in \beta(y_j)}f(e) \geq \rho(y_j)$​，表示实际运入$y_j$的总量大于等于其消费需求</li>
+</ol>
+<p>满足上定义的流函数称为有供需约束的可行流</p>
+<p><strong>定理：</strong>给定有供需约束的网络$N = (D,X,Y,\sigma,\rho,c)$，$N$有可行流的充要条件是：任给$S \subseteq V(D)$，都满足$C((S,\bar{S})) \geq \rho(Y \cap \bar{S}) - \sigma(X \cap \bar{S})$，其中$C((S,\bar{S})) = \sum_{e \in (S,\bar{S})}c(e)$为截$(S,\bar{S})$的截量，$\rho(Y \cap \bar{S}) = \sum_{y_j \in Y \cap \bar{S}}\rho(y_j)$，$\sigma(X \cap \bar{S}) = \sum_{x_i \in X \cap \bar{S}}\sigma(x_i)$</p>
+<p><strong>定义：</strong>给定有供需约束的网络$N = (D,X,Y,\sigma,\rho,c)$，定义$N$的附加网络$N’ = (D’,x_0,y_0,c’)$为：</p>
+<ol>
+<li>$V(D’) = V(D) \cup {x_0,y_0}$，其中$x_0,y_0 \notin V(D)$</li>
+<li>$E(D’) = E(D) \cup {(x_0,y_0) | i = 1,2,…,m} \cup {(y_j,y_0)|j = 1,2,…,n}$</li>
+<li>$x_0$与$y_0$分别为$N’$的源与汇</li>
+<li>容量函数$c’$定义为$c’(e) = c(e),e \in E(D)$，$c’(e) = \sigma(x_i), e=(x_0,x_i)$，$c’(e) = \rho(y_j),e = (y_j,y_0)$ </li>
+</ol>
+<p><strong>引理：</strong>有供需约束的网络$N = (D,X,Y,\sigma,\rho,c)$存在可行流，当且仅当其附加网络$N’ = (D’,x_0,y_0,c’)$的最大流$f’$满足：任给$1 \leq j \leq n,f’((y_j,y_0)) = c’((y_j,y_0))$</p>
+<p><strong>算法：</strong>有供需约束的可行流算法</p>
+<p>输入：有供需约束的网络$N = (D,X,Y,\sigma,\rho,c)$</p>
+<p>输出：$N$的可行流函数$f$，或断定$N$没有可行流</p>
+<ol>
+<li>构造$N$的附加网络$N’ = (D’,x_0,y_0,c’)$</li>
+<li>用2F算法求出$N’$的最大流函数$f’$</li>
+<li>若$f’$满足：任给$1 \leq j \leq n$，$f’$使得边$((y_j,y_0))$满载，则转第四步；否则输出结论”$N$没有可行流”，算法停止</li>
+<li>将$f’$限制到网络$N$上，即任给$e \in E(D)\subset E(D’)$，令$f(e) = f’(e)$，$f$就是$N$的可行流，算法停止</li>
+</ol>
+</div><h2 id="网络流在连通度中的应用"><a href="#网络流在连通度中的应用" class="headerlink" title="网络流在连通度中的应用"></a>网络流在连通度中的应用</h2><div class="story post-story"><h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p><strong>定义：</strong>给定有向图$D = (V,E)$​，$f:E \rightarrow \mathcal{R}$​是$D$​上的边权函数，若$f$​满足，任给$v \in V(D)$，都有$\sum_{e \in \alpha(v)}f(e) - \sum_{e \in \beta(v)}f(e) = 0$，则称$f$是$D$上的一个循环</p>
+<p><strong>定义：</strong>设$f$是集合$S$上的实函数，则称$S$中函数值不为0的元素对应的边子集为$f$的<strong>支撑</strong></p>
+<p><strong>引理：</strong>设$f$是有向图$D$上非0的循环，则$f$的支撑中含有一个圈(指的是略去边的方向后构成的无向圈)；若$f$是非负函数，则$f$的支撑中含有一个有向圈</p>
+<p><strong>引理：</strong>任给有向图$D$中的一个循环$f$，$f$都是一些圈导出循环的线性组合</p>
+<p><strong>引理：</strong>任给有向图$D$中的一个非负循环$f$，$f$都是一些有向圈导出循环的线性组合.若$f$的函数值都是整数，则$f$是有向圈导出循环的某个线性组合，使得该线性组合中的系数都是非负整数</p>
+<p><strong>推论：</strong>设$N = (D,s,t,c)$为一个网络，其容量函数$c$为单位容量(每条边容量均为1)，$k \in N^{+}$，则$N$存在流量为$k$的流函数等价于$D$中存在$k$条从$s$到$t$无公共边的有向轨道.</p>
+<h4 id="Menger定理"><a href="#Menger定理" class="headerlink" title="Menger定理"></a>Menger定理</h4><p><strong>定理：</strong>任给无向图$G$以及$G$中的两个顶点$u,v$，$G$中无公共边的$uv$-轨道的最大数量等于最小$uv$-边割集中边的数量</p>
+<p><strong>定理：</strong>任给无向图$G$以及$G$中的两个顶点$u,v$，$G$中无公共边的$uv$-轨道的最大数量等于最小$uv$​-边割集中有向边的数量</p>
 
 </div>
   </div>
@@ -2611,7 +2654,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://yoursite.com/2021/11/18/graphtheory/graphtheory9/>http://yoursite.com/2021/11/18/graphtheory/graphtheory9/</a></p>
+                <p>本文永久链接是：<a href=http://yoursite.com/2021/11/21/graphtheory/graphtheory9/>http://yoursite.com/2021/11/21/graphtheory/graphtheory9/</a></p>
               
             
           </blockquote>
@@ -2628,10 +2671,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-18T17:10:48-08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-21T21:23:51-08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年11月18日</p>
+    <p>更新于：2021年11月21日</p>
   </a>
 </div>
 
@@ -2654,7 +2697,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/11/18/graphtheory/graphtheory9/&title=图论Chap9 网络流理论 - Zya's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/11/21/graphtheory/graphtheory9/&title=图论Chap9 网络流理论 - Zya's Blog&summary="
           
           >
           
@@ -2666,7 +2709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/11/18/graphtheory/graphtheory9/&title=图论Chap9 网络流理论 - Zya's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/11/21/graphtheory/graphtheory9/&title=图论Chap9 网络流理论 - Zya's Blog&summary="
           
           >
           
@@ -2678,7 +2721,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/11/18/graphtheory/graphtheory9/&title=图论Chap9 网络流理论 - Zya's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/11/21/graphtheory/graphtheory9/&title=图论Chap9 网络流理论 - Zya's Blog&summary="
           
           >
           
@@ -2730,7 +2773,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2021/11/18/graphtheory/graphtheory9/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2021/11/21/graphtheory/graphtheory9/index.html#comments">
     </span>
     <p ct><i class='fas fa-comments'></i> 评论</p>
     
@@ -2763,7 +2806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B5%81%E5%87%BD%E6%95%B0"><span class="toc-text">网络与流函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ford-Fulkerson-2F-%E7%AE%97%E6%B3%95"><span class="toc-text">Ford-Fulkerson(2F)算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E9%87%8F%E6%9C%89%E4%B8%8A%E4%B8%8B%E7%95%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E6%9C%80%E5%A4%A7%E6%B5%81"><span class="toc-text">容量有上下界的网络最大流</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B5%81%E5%87%BD%E6%95%B0"><span class="toc-text">网络与流函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ford-Fulkerson-2F-%E7%AE%97%E6%B3%95"><span class="toc-text">Ford-Fulkerson(2F)算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E9%87%8F%E6%9C%89%E4%B8%8A%E4%B8%8B%E7%95%8C%E7%9A%84%E7%BD%91%E7%BB%9C%E6%9C%80%E5%A4%A7%E6%B5%81"><span class="toc-text">容量有上下界的网络最大流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E4%BE%9B%E9%9C%80%E9%9C%80%E6%B1%82%E7%9A%84%E7%BD%91%E7%BB%9C%E6%B5%81"><span class="toc-text">有供需需求的网络流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%81%E5%9C%A8%E8%BF%9E%E9%80%9A%E5%BA%A6%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">网络流在连通度中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-text">循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Menger%E5%AE%9A%E7%90%86"><span class="toc-text">Menger定理</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -2929,8 +2972,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637284290215')
-      volantis.js('/js/message.js?time=1637284290215', () => {
+      volantis.css('/css/message.css?time=1637558669974')
+      volantis.js('/js/message.js?time=1637558669974', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2975,8 +3018,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637284290215')
-      volantis.js('/js/message.js?time=1637284290215', () => {
+      volantis.css('/css/message.css?time=1637558669974')
+      volantis.js('/js/message.js?time=1637558669974', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3035,8 +3078,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637284290215')
-      volantis.js('/js/message.js?time=1637284290215', () => {
+      volantis.css('/css/message.css?time=1637558669974')
+      volantis.js('/js/message.js?time=1637558669974', () => {
         hideMessage(done);
       });
     } else {
@@ -3254,7 +3297,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1637284290215')
+    volantis.js('/js/rightMenu.js?time=1637558669974')
   </script>
 
 
@@ -3268,19 +3311,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1637284290215")
+        volantis.js("/js/plugins/sites.js?time=1637558669974")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1637284290215")
+        volantis.js("/js/plugins/friends.js?time=1637558669974")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1637284290215")
+        volantis.js("/js/plugins/contributors.js?time=1637558669974")
       }
     
   };
@@ -3381,7 +3424,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1637284290215').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1637558669974').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3390,7 +3433,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1637284290215.js"></script>
+<script src="/js/app.js?time=1637558669974.js"></script>
 
 
 <!-- optional -->
@@ -3403,7 +3446,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1637284290215");
+    return volantis.js("/js/search/hexo.js?time=1637558669974");
   }
 
   function loadSearchService() {
@@ -3704,7 +3747,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc-图论-数学-图论/","name":"-[ustc,图论] -[数学,图论]"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/11/18/graphtheory/graphtheory9/","name":"图论Chap9 网络流理论"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"图论Chap9 网络流理论","description":"","datePublished":"2021-11-19T01:10:48.747Z","dateModified":"2021-11-19T01:10:48.747Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/11/18/graphtheory/graphtheory9/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/11/18/graphtheory/graphtheory9/","wordCount":0,"articleSection":"-[ustc,图论] -[数学,图论]","keywords":"图论","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/ustc-图论-数学-图论/","name":"-[ustc,图论] -[数学,图论]"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/11/21/graphtheory/graphtheory9/","name":"图论Chap9 网络流理论"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"图论Chap9 网络流理论","description":"","datePublished":"2021-11-22T05:23:51.155Z","dateModified":"2021-11-22T05:23:51.167Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/11/21/graphtheory/graphtheory9/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/11/21/graphtheory/graphtheory9/","wordCount":0,"articleSection":"-[ustc,图论] -[数学,图论]","keywords":"图论","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
