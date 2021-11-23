@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://yoursite.com/categories/linux-apue/"/>
+  
+  <link rel="canonical" href="http://yoursite.com/2021/11/23/crypto/chap1/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Zya&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1637681223381" as="style">
+  <link rel="preload" href="/css/style.css?time=1637681223327" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>分类：-[Linux,APUE] - Zya's Blog</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Zya&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/Linux-APUE/index.html">
+  <title>Chap1 密码学基础 - Zya's Blog</title>
+  <meta name="keywords" content="Crypto,null">
+  <meta name="description" content="公钥密码在公钥密码体制中，密钥对的许纳泽要保证公钥求出私钥等价于要求解一个困难的计算问题，常用公钥密码基础的困难问题有如下数论问题：  整数因子分解问题 离散对数问题 椭圆曲线离散对数问题  RSARSA密钥生成其公钥由一对整数$(n,e)$​组成，其中$n$是RSA的运算模，它是两个同样长度的保密随机素数$p$和$q$的乘积。加密指数$e$是满足$1 &lt; e &lt; \phi$且$gcd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chap1 密码学基础">
+<meta property="og:url" content="http://yoursite.com/2021/11/23/Crypto/Chap1/index.html">
 <meta property="og:site_name" content="Zya&#39;s Blog">
+<meta property="og:description" content="公钥密码在公钥密码体制中，密钥对的许纳泽要保证公钥求出私钥等价于要求解一个困难的计算问题，常用公钥密码基础的困难问题有如下数论问题：  整数因子分解问题 离散对数问题 椭圆曲线离散对数问题  RSARSA密钥生成其公钥由一对整数$(n,e)$​组成，其中$n$是RSA的运算模，它是两个同样长度的保密随机素数$p$和$q$的乘积。加密指数$e$是满足$1 &lt; e &lt; \phi$且$gcd">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-11-23T15:26:22.374Z">
+<meta property="article:modified_time" content="2021-11-23T15:26:22.374Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Crypto">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1655,8 +1660,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1637681223381" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1637681223381"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1637681223327" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1637681223327"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2345,7 +2350,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"></div>
 
@@ -2419,91 +2424,281 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/22/APUE/Chap3/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/11/23/Crypto/Chap1/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Zya's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/11/22/APUE/Chap3/"  itemprop="url">
-        APUE Chap3 文件I/O
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        文件描述符对于内核而言，所有打开的文件都通过文件描述符引用。文件描述符是一个非负整数。当打开一个现有文件或创建一个新文件时，内核向进程返回一个文件描述符。当读、写一个文件时，使用open或creat返回的文件描述符标识该文件，将其作为参数传给read/write
-按惯例，shell把0与标准输入关联，1与标准输出关联，2与标准错误关联
-在&lt;unisted.h&gt;中这三个文件描述符分...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        Chap1 密码学基础
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    " class="lazyload" data-srcset="" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==<img itemprop="image" src="" alt="This is a picture without description" >
+    <p itemprop="name">Yuang Zhang</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Crypto/">-[Crypto]</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Crypto/" itemprop="url"><span itemprop="name">-[Crypto]</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-11-22T07:10:47-08:00">2021-11-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux-APUE/">-[Linux,APUE]</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux-APUE/" itemprop="url"><span itemprop="name">-[Linux,APUE]</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-23T07:26:22-08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年11月23日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="公钥密码"><a href="#公钥密码" class="headerlink" title="公钥密码"></a>公钥密码</h1><p>在公钥密码体制中，密钥对的许纳泽要保证公钥求出私钥等价于要求解一个困难的计算问题，常用公钥密码基础的困难问题有如下数论问题：</p>
+<ol>
+<li>整数因子分解问题</li>
+<li>离散对数问题</li>
+<li>椭圆曲线离散对数问题</li>
+</ol>
+<h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><div class="story post-story"><h3 id="RSA密钥生成"><a href="#RSA密钥生成" class="headerlink" title="RSA密钥生成"></a>RSA密钥生成</h3><p>其公钥由一对整数$(n,e)$​组成，其中$n$是RSA的运算模，它是两个同样长度的保密随机素数$p$和$q$的乘积。加密指数$e$是满足$1 &lt; e &lt; \phi$且$gcd(e,\phi) = 1$的整数，其中$\phi = (p - 1)*(q - 1)$。私钥$d$也称为解密指数，它是满足$1 &lt; d &lt; \phi$且$ed \equiv 1(mod \phi)$的整数。</p>
+<p><strong>算法：</strong>RSA密钥对的生成</p>
+<p>输入：安全参数$l$</p>
+<p>输出：RSA公钥$(n,e)$和私钥$d$</p>
+<ol>
+<li>随机选择两个素数$p、q$，长度同为$l / 2$​​</li>
+<li>计算$n = pq$和$\phi = (p - 1)*(q - 1)$</li>
+<li>任意选择整数$e$，$e$满足$1 &lt; e &lt; \phi$且$gcd(e,\phi) = 1$</li>
+<li>计算整数$d$​​，$d$​​满足$1 &lt; d &lt; \phi$​​且$ed \equiv 1 ; (mod; \phi)$​​</li>
+<li>返回$(n,e,d)$</li>
+</ol>
+<h3 id="RSA加密方案"><a href="#RSA加密方案" class="headerlink" title="RSA加密方案"></a>RSA加密方案</h3><p>理论依据：$m^{ed} \equiv m ;(mod; n)$​​​</p>
+<p><strong>算法：</strong>基本RSA加密</p>
+<p>输入：RSA公钥$(n,e)$，明文$m \in [0,n - 1]$</p>
+<p>输出：密文$c$</p>
+<ol>
+<li>计算$c \equiv m^{e} ; (mod; n)$​​​</li>
+<li>返回$c$</li>
+</ol>
+<p><strong>算法：</strong>基本RSA解密</p>
+<p>输入：RSA公钥$(n,e)$，RSA私钥$d$，密文$c$</p>
+<p>输出：明文$m$</p>
+<ol>
+<li>计算$m \equiv c^{d} ; (mod; n)$​​​</li>
+<li>返回$m$</li>
+</ol>
+<h3 id="RSA签名方案"><a href="#RSA签名方案" class="headerlink" title="RSA签名方案"></a>RSA签名方案</h3><p>签名者首先利用密码学杂凑函数$H$​，计算消息$m$​的摘要$h = H(m)$​，摘要值$h$​称为消息$m$​的短指纹。然后签名者用自己的私钥$d$​计算$h \quad mod n$​的$e$​次根$s$​，即$s \equiv h^{d} ; (mod ; n)$​，显然有$s^{e} \equiv h (mod;n)$​ 。最后，签名者把消息$m$和自己的签名$s$一起发给验证方。验证方根据收到的消息重新计算消息摘要$h = H(m)$，并从$s$恢复出摘要$h’ \equiv s^{e};(mod; n)$。若$h = h’$，则验证方认为签名$s$是真实的。该方案的安全性建立在伪造者不知道私钥$d$的情况下计算$h; mod; n$的$e$次根的困难性之上</p>
+<p><strong>算法：</strong>基本RSA签名生成</p>
+<p>输入：RSA公钥$(n,e)$，RSA的私钥$d$，消息$m$</p>
+<p>输出：签名$s$</p>
+<ol>
+<li>计算$h = H(m)$，其中$H$是一个杂凑函数</li>
+<li>计算$s \equiv h^{d} ; (mod ; n)$</li>
+<li>返回$s$</li>
+</ol>
+<p><strong>算法：</strong>基本RSA签名验证</p>
+<p>输入：RSA公钥$(n,e)$，消息$m$，签名$s$</p>
+<p>输出：接受或拒绝签名</p>
+<ol>
+<li>计算$h = H(m)$</li>
+<li>计算$h’ \equiv s^{e};(mod; n)$</li>
+<li>若$h = h’$，则返回(“接受签名”)；否则，返回(“拒绝签名”)</li>
+</ol>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/11/22/APUE/Chap3/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://yoursite.com/2021/11/23/Crypto/Chap1/>http://yoursite.com/2021/11/23/Crypto/Chap1/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-23T07:26:22-08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年11月23日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Crypto/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Crypto</p></a></div>
+  <span hidden itemprop="keywords">Crypto</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/11/23/Crypto/Chap1/&title=Chap1 密码学基础 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2021/11/23/Crypto/Chap1/&title=Chap1 密码学基础 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/11/23/Crypto/Chap1/&title=Chap1 密码学基础 - Zya's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/11/22/APUE/Chap3/'>
+          <p class='title'>APUE Chap3 文件I/O<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>文件描述符对于内核而言，所有打开的文件都通过文件描述符引用。文件描述符是一个非负整数。当打开一个现有文件或创建一个新文件时，内核向进程返回一个文件描述符。当读、写一个文件时，使用open或cre...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2021/11/23/Crypto/Chap1/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2511,171 +2706,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Zya's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Crypto/" href="/categories/Crypto/"
-            active-action="action-categoriesCrypto"
-            ><div class='name'>-[Crypto]</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux-APUE/" href="/categories/Linux-APUE/"
-            active-action="action-categoriesLinux-APUE"
-            ><div class='name'>-[Linux,APUE]</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ctf/" href="/categories/ctf/"
-            active-action="action-categoriesctf"
-            ><div class='name'>ctf</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/ctf/pwn/" href="/categories/ctf/pwn/"
-            active-action="action-categoriesctfpwn"
-            ><div class='name'>pwn</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/" href="/categories/ustc-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E5%AD%A6-%E5%9B%BE%E8%AE%BA/"
-            active-action="action-categoriesustc-E59BBEE8AEBA-E695B0E5ADA6-E59BBEE8AEBA"
-            ><div class='name'>-[ustc,图论] -[数学,图论]</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/" href="/categories/%E6%95%B0%E5%AD%A6/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/"
-            active-action="action-categoriesE695B0E5ADA6E5AE9EE58F98E587BDE695B0"
-            ><div class='name'>实变函数</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180"
-            ><div class='name'>计算机基础</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180E6B187E7BC96E8AFADE8A880"
-            ><div class='name'>汇编语言</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE59FBAE7A180E7A88BE5BA8FE59198E79A84E887AAE68891E4BFAEE585BB"
-            ><div class='name'>程序员的自我修养</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA"><span class="toc-text">RSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90"><span class="toc-text">RSA密钥生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA%E5%8A%A0%E5%AF%86%E6%96%B9%E6%A1%88"><span class="toc-text">RSA加密方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-text">RSA签名方案</span></a></li></ol></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Crypto/" style="font-size: 14px; color: #999">Crypto</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/pwn/" style="font-size: 14px; color: #999">pwn</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">汇编语言</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2704,14 +2762,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Chap1 密码学基础";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2825,8 +2884,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637681223381')
-      volantis.js('/js/message.js?time=1637681223381', () => {
+      volantis.css('/css/message.css?time=1637681223327')
+      volantis.js('/js/message.js?time=1637681223327', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2871,8 +2930,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637681223381')
-      volantis.js('/js/message.js?time=1637681223381', () => {
+      volantis.css('/css/message.css?time=1637681223327')
+      volantis.js('/js/message.js?time=1637681223327', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2931,8 +2990,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637681223381')
-      volantis.js('/js/message.js?time=1637681223381', () => {
+      volantis.css('/css/message.css?time=1637681223327')
+      volantis.js('/js/message.js?time=1637681223327', () => {
         hideMessage(done);
       });
     } else {
@@ -3150,7 +3209,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1637681223381')
+    volantis.js('/js/rightMenu.js?time=1637681223327')
   </script>
 
 
@@ -3164,19 +3223,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1637681223381")
+        volantis.js("/js/plugins/sites.js?time=1637681223327")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1637681223381")
+        volantis.js("/js/plugins/friends.js?time=1637681223327")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1637681223381")
+        volantis.js("/js/plugins/contributors.js?time=1637681223327")
       }
     
   };
@@ -3277,7 +3336,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1637681223381').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1637681223327').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3286,7 +3345,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1637681223381.js"></script>
+<script src="/js/app.js?time=1637681223327.js"></script>
 
 
 <!-- optional -->
@@ -3299,7 +3358,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1637681223381");
+    return volantis.js("/js/search/hexo.js?time=1637681223327");
   }
 
   function loadSearchService() {
@@ -3366,6 +3425,60 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
+
+    <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
 
 </pjax>
 
@@ -3546,7 +3659,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/-[Linux,APUE]/","name":"-[Linux,APUE]"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Zya's Blog","url":"http://yoursite.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":""},"publisher":{"@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Zya's Blog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"Zya's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/Crypto/","name":"-[Crypto]"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2021/11/23/Crypto/Chap1/","name":"Chap1 密码学基础"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Chap1 密码学基础","description":"","datePublished":"2021-11-23T15:26:22.374Z","dateModified":"2021-11-23T15:26:22.374Z","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2021/11/23/Crypto/Chap1/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"Zya's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2021/11/23/Crypto/Chap1/","wordCount":0,"articleSection":"-[Crypto]","keywords":"Crypto","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

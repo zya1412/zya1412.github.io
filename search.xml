@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Chap1 密码学基础</title>
+      <link href="/2021/11/23/Crypto/Chap1/"/>
+      <url>/2021/11/23/Crypto/Chap1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="公钥密码"><a href="#公钥密码" class="headerlink" title="公钥密码"></a>公钥密码</h1><p>在公钥密码体制中，密钥对的许纳泽要保证公钥求出私钥等价于要求解一个困难的计算问题，常用公钥密码基础的困难问题有如下数论问题：</p><ol><li>整数因子分解问题</li><li>离散对数问题</li><li>椭圆曲线离散对数问题</li></ol><h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><div class="story post-story"><h3 id="RSA密钥生成"><a href="#RSA密钥生成" class="headerlink" title="RSA密钥生成"></a>RSA密钥生成</h3><p>其公钥由一对整数$(n,e)$​组成，其中$n$是RSA的运算模，它是两个同样长度的保密随机素数$p$和$q$的乘积。加密指数$e$是满足$1 &lt; e &lt; \phi$且$gcd(e,\phi) = 1$的整数，其中$\phi = (p - 1)*(q - 1)$。私钥$d$也称为解密指数，它是满足$1 &lt; d &lt; \phi$且$ed \equiv 1(mod \phi)$的整数。</p><p><strong>算法：</strong>RSA密钥对的生成</p><p>输入：安全参数$l$</p><p>输出：RSA公钥$(n,e)$和私钥$d$</p><ol><li>随机选择两个素数$p、q$，长度同为$l / 2$​​</li><li>计算$n = pq$和$\phi = (p - 1)*(q - 1)$</li><li>任意选择整数$e$，$e$满足$1 &lt; e &lt; \phi$且$gcd(e,\phi) = 1$</li><li>计算整数$d$​​，$d$​​满足$1 &lt; d &lt; \phi$​​且$ed \equiv 1 ; (mod; \phi)$​​</li><li>返回$(n,e,d)$</li></ol><h3 id="RSA加密方案"><a href="#RSA加密方案" class="headerlink" title="RSA加密方案"></a>RSA加密方案</h3><p>理论依据：$m^{ed} \equiv m ;(mod; n)$​​​</p><p><strong>算法：</strong>基本RSA加密</p><p>输入：RSA公钥$(n,e)$，明文$m \in [0,n - 1]$</p><p>输出：密文$c$</p><ol><li>计算$c \equiv m^{e} ; (mod; n)$​​​</li><li>返回$c$</li></ol><p><strong>算法：</strong>基本RSA解密</p><p>输入：RSA公钥$(n,e)$，RSA私钥$d$，密文$c$</p><p>输出：明文$m$</p><ol><li>计算$m \equiv c^{d} ; (mod; n)$​​​</li><li>返回$m$</li></ol><h3 id="RSA签名方案"><a href="#RSA签名方案" class="headerlink" title="RSA签名方案"></a>RSA签名方案</h3><p>签名者首先利用密码学杂凑函数$H$​，计算消息$m$​的摘要$h = H(m)$​，摘要值$h$​称为消息$m$​的短指纹。然后签名者用自己的私钥$d$​计算$h \quad mod n$​的$e$​次根$s$​，即$s \equiv h^{d} ; (mod ; n)$​，显然有$s^{e} \equiv h (mod;n)$​ 。最后，签名者把消息$m$和自己的签名$s$一起发给验证方。验证方根据收到的消息重新计算消息摘要$h = H(m)$，并从$s$恢复出摘要$h’ \equiv s^{e};(mod; n)$。若$h = h’$，则验证方认为签名$s$是真实的。该方案的安全性建立在伪造者不知道私钥$d$的情况下计算$h; mod; n$的$e$次根的困难性之上</p><p><strong>算法：</strong>基本RSA签名生成</p><p>输入：RSA公钥$(n,e)$，RSA的私钥$d$，消息$m$</p><p>输出：签名$s$</p><ol><li>计算$h = H(m)$，其中$H$是一个杂凑函数</li><li>计算$s \equiv h^{d} ; (mod ; n)$</li><li>返回$s$</li></ol><p><strong>算法：</strong>基本RSA签名验证</p><p>输入：RSA公钥$(n,e)$，消息$m$，签名$s$</p><p>输出：接受或拒绝签名</p><ol><li>计算$h = H(m)$</li><li>计算$h’ \equiv s^{e};(mod; n)$</li><li>若$h = h’$，则返回(“接受签名”)；否则，返回(“拒绝签名”)</li></ol></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> -[Crypto] </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Crypto </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>APUE Chap3 文件I/O</title>
       <link href="/2021/11/22/APUE/Chap3/"/>
       <url>/2021/11/22/APUE/Chap3/</url>
